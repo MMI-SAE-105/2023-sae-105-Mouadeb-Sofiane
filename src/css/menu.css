@@ -58,3 +58,6 @@ hr{
     background-color: #767676;
     margin-top: -250%;
 }
+.liste_li{
+    line-height: 3;
+}
