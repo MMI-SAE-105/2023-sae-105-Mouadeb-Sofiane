@@ -1,3 +1,11 @@
+img{
+    width: 150px;
+    margin: 5px;
+}
+.imgpaulbrilvofb{
+    height: 105px;
+    margin-left: 56px;
+}
 .carsl_prt-img {
     display: flex;
     width: 100%;
