@@ -51,3 +51,10 @@ hr{
 .btndumenu{
     border: none;
 }
+.icon_cross_menu{
+    width: 50%;
+    margin-left: 82%;
+    border: none;
+    background-color: #af9e9e;
+    margin-top: -250%;
+}
