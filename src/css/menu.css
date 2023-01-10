@@ -1,0 +1,53 @@
+.menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #af9e9e;
+    display: grid;
+    place-content: center;
+}
+
+hr{
+    border: 1px solid #ffffff;
+    width: 90%;
+}
+.gac{
+    text-align: center;
+    margin: 3%;
+}
+.gac1{
+    text-align: center;
+    margin: 2%;
+}
+
+.header_menuBtn {
+    position: relative;
+    z-index: 10;
+}
+  .noscroll,
+  .noscroll body {
+    overflow: hidden;
+}
+
+.flag_fr {
+    position: absolute;
+    bottom: 23%;
+    right: 28%;
+}
+
+.flag_gb {
+    position: absolute;
+    bottom: 21.5%;
+    left: 28%;
+}
+
+.text-align_menu{
+    display: flex;
+}
+
+
+.btndumenu{
+    border: none;
+}

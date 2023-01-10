@@ -7,21 +7,7 @@ img{
     width: 170px;
     margin-left: 36px;
 }
-.carsl_prt-img {
-    display: flex;
-    width: 100%;
-    overflow-x: scroll;
-    scroll-behavior: smooth;
-    scroll-snap-type: x mandatory;
-    margin: 0%; 
-    }
-.crsl_img {
-    flex: none;
-    width: 100%;
-    scroll-snap-align: start;
-    margin: 0%; 
-    }
-.crsl_prt-img figure {
-    margin: 0%; 
-    }
+.h1title{
+    margin-left: 35%;
+}
 
