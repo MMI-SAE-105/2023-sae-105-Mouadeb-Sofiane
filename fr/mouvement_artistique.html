@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" x-data="{ menuIsOpen:false }"></html>
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,7 +10,7 @@
     <script defer src="https://unpkg.com/alpinejs%22%3E"></script>
 </head>
 <body>
-    <h1>Mouvement artistique</h1>
+    <h1 class="h1titleh">Mouvement artistique</h1>
     <hr>
     <h2>Le mouvement baroque</h2>
         <p>
@@ -21,44 +21,40 @@
         répandu de l'Italie vers les grands pays d'Europe.
         </p>
         <h2>Les 4 artistes de ce mouvement pour l'exposition</h2>
-        <h3 class="titre-carrousel">Nos Articles du moment</h3>
-        <div class="crsl-a">      
-            <div class="crsl" x-data="{hrefCourant:'#ecran-1',}">
-                <button @click="const p =$refs.parent ;  p.scrollLeft-= p.clientWidth" class="crsl_btn crsl_btn-avant" aria-label="slide précedant">&lt;</button><button @click="const p =$refs.parent ;  p.scrollLeft+= p.clientWidth" class="crsl_btn crsl_btn-apres" aria-label="slide suivant"></button>
-                <div class="crsl_parent-ecrans" x-ref="parent" @scroll.debounce.250ms.passive="hrefCourant = '#'+
+        <div class="carrousel-a">      
+            <div class="carrousel" x-data="{hrefCourant:'#ecran-1',}">
+                <button @click="const p =$refs.parent ;  p.scrollLeft-= p.clientWidth" class="carrousel_btn carrousel_btn-avant" aria-label="slide précedant"><img src="/public/icon/arrow-left(1).svg" alt="flèche gauche"></button><button @click="const p =$refs.parent ;  p.scrollLeft+= p.clientWidth" class="carrousel_btn carrousel_btn-apres" aria-label="slide suivant"><img src="/public/icon/arrow-right(1).svg" alt="flèche droite"></button>
+                <div class="carrousel_parent-ecrans" x-ref="parent" @scroll.debounce.250ms.passive="hrefCourant = '#'+
                                 [...$refs.parent.children]
                                 .find(e=>e.getBoundingClientRect().x>=0)
                                 .id">
-                    <div id="ecran-1" class="crsl_ecran">
+                    <div id="ecran-1" class="carrousel_ecran">
                         <figure>
-                            <img src="../public/img/Agostino_Tassi.webp" alt="photo de Agostino Tassi">
-                            <figcaption>Agostino Tassi</figcaption>
+                            <a href="/fr/agostino_tassi.html"><img src="/public/img/Agostino_Tassi.webp" alt="image ecran 1"></a>
+                            <figcaption><a class="pfig" href="/fr/agostino_tassi.html">Agostino Tassi</figcaption></a>
                         </figure>
                     </div>
-                    <div id="ecran-2" class="crsl_ecran">
+                    <div id="ecran-2" class="carrousel_ecran">
                         <figure>
-                            <img src="../public/img/Osias_Beert.webp" alt="Photo de Osias Beert">
-                            <figcaption>Osias Beert</figcaption>
+                            <a href="/fr/Osias_Beert.html"><img src="/public/img/Osias_Beert.webp" alt="image ecran 2"></a>
+                            <figcaption><a class="pfig" href="/fr/Osias_Beert.html">Osias Beert</a></figcaption>
                         </figure>
                     </div>
-                    <div id="ecran-3" class="crsl_ecran">
+                    <div id="ecran-3" class="carrousel_ecran">
                         <figure>
-                            <img src="../public/img/Paul_Bril.webp" alt="Photo de Paul Bril">
-                            <figcaption>Paul Bril</figcaption>
+                            <a href="/fr/PaulBril.html"><img src="/public/img/Paul_Bril.webp" alt="image ecran 3"></a>
+                            <figcaption><a class="pfig" href="/fr/PaulBril.html">Paul Bril</figcaption></a>
                         </figure>
                     </div>
-                    <div id="ecran-4" class="crsl_ecran">
+                    <div id="ecran-4" class="carrousel_ecran">
                         <figure>
-                            <img src="../public/img/Pierre_De_Cortone.webp" alt="Photo de Pierre De Cortone">
-                            <figcaption>Pierre De Cortone</figcaption>
+                            <a href="/fr/PierreDeCortone.html"><img src="/public/img/Pierre_De_Cortone.webp" alt="image ecran 4"></a>
+                            <figcaption><a class="pfig" href="/fr/PierreDeCortone.html">Pierre De Cortone</a></figcaption>
                         </figure>
-                    </div>
                     </div>
                 </div>
             </div>
         </div>
-
-        Carrousel des artistes
 
             <h2>L'histoire de ce mouvement</h2>
                 <p>
@@ -93,9 +89,28 @@
                     excessive, comme s'il s'agissait de scènes en trompe-l'œil, plongeant le spectateur dans la théâtralité de l'action.
                 </p>
             <h2>Frise sur la chronologie des sorties de leur œuvres principales</h2>
-        
-
             la frise
-
+            la frise
+            la frise
+    <footer>
+        <div class="logo__texte_ms">
+            <img class="logo_ms" src="../public/img/baroque-expo.webp" alt="Logo du site">
+                <h3 class="h3footer" class="created_by_footer"></h3>
+         </div>
+            <p class="pfooter">Mention légale</p>   
+            <p class="pfooter">Contact</p> 
+            <p class="pfooter">Fondation Cartier, 261 Bd Raspail, 75014 Paris</p>    
+            <h4 class="h4footer">Suivre l'exposition</h4>
+            <div class="icon">
+                <div class="icon_facebook"><a href=""><img class="face2" src="../public/icon/facebook2.svg" alt="logo facebook"></a></div>
+                <div class="icon_twitter"><a href=""><img class="twi2" src="../public/icon/twitter2.svg" alt="logo twitter"></a></div> 
+                <div class="icon_instagram"><a href=""><img class="insta2" src="../public/icon/instagram2.svg" alt="logo instagram"></a></div>     
+                <div class="icon_youtube"><a href=""><img class="you2" src="../public/icon/youtube2.svg" alt="logo youtube"></a></div>     
+            </div>               
+                <p class="pfooter">Ce projet a été réaliser dans le cadre d'un exercice pédagogique au 
+                <a href="http://mmimontbeliard.com/" style="color: #444444" class="footer_link" target="_blank">département MMI de Montbéliard</a></p>
+                <p class="pfooter">Université Nord Franche-Comté</p>
+                <p class="pfooter"><a href="http://mmimontbeliard.com/" style="color: #444444" class="footer_link" class="pfooter" target="_blank">IUT MMI Montbéliard</a></p>
+    </footer>  
 </body>
 </html>
