@@ -6,12 +6,13 @@
     scroll-snap-type: x mandatory;
     margin: 0%; 
     }
-  .crsl_img {
+.crsl_img {
     flex: none;
     width: 100%;
     scroll-snap-align: start;
     margin: 0%; 
     }
-  .crsl_img figure {
+.crsl_prt-img figure {
     margin: 0%; 
     }
+
