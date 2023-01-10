@@ -59,5 +59,9 @@ hr{
     margin-bottom: 47%;
 }
 .liste_li{
-    line-height: 4;
+    line-height: 5;
+    margin-top: -90%;
+}
+.liste_liii{
+    margin-top: 10%;
 }
