@@ -52,11 +52,10 @@ hr{
     border: none;
 }
 .icon_cross_menu{
-    width: 50%;
-    margin-left: 82%;
+    width: 40%;
+    margin-left: 20%;
     border: none;
     background-color: #767676;
-    margin-top: -250%;
 }
 .liste_li{
     line-height: 4;
