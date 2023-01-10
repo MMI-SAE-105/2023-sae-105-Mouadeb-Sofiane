@@ -22,7 +22,7 @@ p{
 }
 h1{
     color: #ffffff;
-    font-family: "Agraham";
+    font-family: 'Agraham';
 }
 h2{
     color: #ffffff;
@@ -69,6 +69,7 @@ h2{
 .desc_Bril{
     width: 49%;
 }
-.desc{
+
+.page2{
     display: flex;
 }
