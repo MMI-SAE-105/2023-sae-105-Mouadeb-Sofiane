@@ -1,4 +1,4 @@
-/*.carsl_prt-img {
+.carsl_prt-img {
     display: flex;
     width: 100%;
     overflow-x: scroll;
@@ -12,6 +12,6 @@
     scroll-snap-align: start;
     margin: 0%; 
     }
-  .carrousel_ecran figure {
+  .crsl_img figure {
     margin: 0%; 
     }
