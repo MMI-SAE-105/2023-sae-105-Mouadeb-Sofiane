@@ -1,0 +1,44 @@
+.logo_ms {
+    max-width: 90px;
+    height: auto;
+  }
+  .h3footer{
+    margin: 20px;
+  }
+  .h4footer{
+    margin: 13px;
+  }
+  .icon {
+    display: flex;
+  }
+  
+  .logo__texte_ms{
+    display: flex;
+  }
+  .icon_twitch{
+    padding-left: 15px;
+    margin-top: -1%;
+  }
+  .icon_facebook{
+    padding-left: 15px;
+  }
+  .icon_instagram{
+    padding-left: 15px;
+  }
+  .icon_twitter{
+    padding-left: 15px;
+    margin-top: 1%;
+  }
+  .icon_tiktok{
+    padding-left: 4px;
+    margin-top: -2%;
+  }
+  .icon_youtube{
+    padding-left: 15px;
+    margin-top: 1.2%;
+  }
+  
+  .logo_mmi {
+    margin-left: 35%;
+  }
+  

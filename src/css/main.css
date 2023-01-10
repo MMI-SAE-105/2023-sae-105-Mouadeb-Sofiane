@@ -60,3 +60,12 @@ h2{
     margin-left: 35%;
     margin-bottom: 4%;
 }
+.desc_Agos{
+    width: 49%;
+}
+.desc_Bril{
+    width: 49%;
+}
+.desc{
+    display: flex;
+}
