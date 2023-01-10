@@ -1,9 +1,9 @@
-.crsl-a {
+.carrousel-a {
     box-sizing:border-box;
     width: 100%;
   }
 
- .crsl {
+ .carrousel {
   width: 100%;
   border: #ffffff;
  } 
@@ -12,7 +12,7 @@
     height:auto;
   }
 
-  .crsl_parent-ecrans{
+  .carrousel_parent-ecrans{
     display:flex;
     max-width:100%;
     overflow-x:scroll;
@@ -21,7 +21,7 @@
 
   }
 
-  .crsl_ecran{
+  .carrousel_ecran{
     width:100%; 
     flex:none;
     align-items: center;
@@ -29,18 +29,18 @@
     scroll-snap-align: start;
   }
 
-  .crsl_ecran figure{
+  .carrousel_ecran figure{
     margin:0;
   }
 
-  .crsl {
+  .carrousel {
     position: relative;
   }
 
-  .crsl_btn {
+  .carrousel_btn {
     position: absolute;
     top: 50%; 
-    transform: translateY(-50%); 
+    transform: translateY(-50%); /
     width: 2rem;
     height: 2rem;
     background: rgba(0,0,0,0.5);
@@ -51,15 +51,15 @@
     color: #fff;
   }
 
-  .crsl_btn-avant {
+  .carrousel_btn-avant {
     left: 50;
   }
 
-  .crsl_btn-apres {
+  .carrousel_btn-apres {
     right: 0;
   }
 
-  .crsl_lst-liens{
+  .caroussel_liste-liens{
     display:flex;
     justify-content:center;
     list-style:none;
@@ -68,7 +68,7 @@
     gap:1rem;
   }
 
-  .crsl-a > a{
+  .carrousel-a > a{
     text-decoration:none;
     border:2px solid black;
     border-radius:5px;
@@ -77,11 +77,11 @@
     background-color:black;
   }
 
-  .crsl-a > li.actif {
+  .carrousel-a > li.actif {
     background-color:white;
   }
 
-  .titre-crsl {
+  .titre-carrousel {
     text-decoration: underline;
     text-underline-position: under;
     font-weight: 100;
