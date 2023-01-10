@@ -4,9 +4,7 @@ img{
     margin: 5px;
 }
 .imgpaulbrilvofb{
-    height: 105px;
-    width: 170px;
-    margin-left: 36px;
+    width: 200%;
 }
 .h1title{
     margin-left: 35%;
@@ -63,13 +61,14 @@ h2{
     margin-left: 35%;
     margin-bottom: 4%;
 }
-.desc_Agos{
-    width: 49%;
-}
-.desc_Bril{
-    width: 49%;
-}
 
 .page2{
     display: flex;
 }
+.desc{
+    flex: 1;
+}
+.desc1{
+    flex: 1;
+}
+
