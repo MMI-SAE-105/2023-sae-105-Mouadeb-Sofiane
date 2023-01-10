@@ -1,0 +1,88 @@
+.crsl-a {
+    box-sizing:border-box;
+    width: 100%;
+  }
+
+ .crsl {
+  width: 100%;
+  border: #ffffff;
+ } 
+  img{
+    max-width:100%;
+    height:auto;
+  }
+
+  .crsl_parent-ecrans{
+    display:flex;
+    max-width:100%;
+    overflow-x:scroll;
+    scroll-behavior:smooth;
+    scroll-snap-type:x mandatory; 
+
+  }
+
+  .crsl_ecran{
+    width:100%; 
+    flex:none;
+    align-items: center;
+    justify-content: center;
+    scroll-snap-align: start;
+  }
+
+  .crsl_ecran figure{
+    margin:0;
+  }
+
+  .crsl {
+    position: relative;
+  }
+
+  .crsl_btn {
+    position: absolute;
+    top: 50%; 
+    transform: translateY(-50%); 
+    width: 2rem;
+    height: 2rem;
+    background: rgba(0,0,0,0.5);
+    border-radius: 50%;
+    border: none;
+    display: grid;
+    place-content: center;
+    color: #fff;
+  }
+
+  .crsl_btn-avant {
+    left: 50;
+  }
+
+  .crsl_btn-apres {
+    right: 0;
+  }
+
+  .crsl_lst-liens{
+    display:flex;
+    justify-content:center;
+    list-style:none;
+    padding:0;
+    margin:0;
+    gap:1rem;
+  }
+
+  .crsl-a > a{
+    text-decoration:none;
+    border:2px solid black;
+    border-radius:5px;
+    padding:10px;
+    color:white;
+    background-color:black;
+  }
+
+  .crsl-a > li.actif {
+    background-color:white;
+  }
+
+  .titre-crsl {
+    text-decoration: underline;
+    text-underline-position: under;
+    font-weight: 100;
+  }

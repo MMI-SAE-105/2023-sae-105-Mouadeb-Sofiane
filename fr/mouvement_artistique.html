@@ -5,6 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mouvement artistique</title>
+    <link rel="stylesheet" href="src/styles.css">
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <script defer src="https://unpkg.com/alpinejs%22%3E"></script>
 </head>
 <body>
     <h1>Mouvement artistique</h1>
@@ -18,35 +21,39 @@
         répandu de l'Italie vers les grands pays d'Europe.
         </p>
         <h2>Les 4 artistes de ce mouvement pour l'exposition</h2>
-
-        <div class="crsl" x-data="{}">
-    <div class="carsl_prt-img">
-        <div id="img1" class="crsl_img">
-            <figure>
-                <img src="./public/img/Competition_on_the_Capitoline_Hill,_1630s_Agostino_Tassi.webp" alt="image 1">
-                <figcaption>Competition on the Capitoline Hill, 1630s, Agostino Tassi</figcaption>
-            </figure>
+        <h3 class="titre-carrousel">Nos Articles du moment</h3>
+        <div class="crsl-a">      
+            <div class="crsl" x-data="{hrefCourant:'#ecran-1',}">
+                <button @click="const p =$refs.parent ;  p.scrollLeft-= p.clientWidth" class="crsl_btn crsl_btn-avant" aria-label="slide précedant">&lt;</button><button @click="const p =$refs.parent ;  p.scrollLeft+= p.clientWidth" class="crsl_btn crsl_btn-apres" aria-label="slide suivant"></button>
+                <div class="crsl_parent-ecrans" x-ref="parent" @scroll.debounce.250ms.passive="hrefCourant = '#'+
+                                [...$refs.parent.children]
+                                .find(e=>e.getBoundingClientRect().x>=0)
+                                .id">
+                    <div id="ecran-1" class="crsl_ecran">
+                        <figure>
+                            <img src="../public/img/Agostino_Tassi.webp" alt="photo de Agostino Tassi">
+                            <figcaption>Agostino Tassi</figcaption>
+                        </figure>
+                    </div>
+                    <div id="ecran-2" class="crsl_ecran">
+                        <figure>
+                            <img src="../public/img/Osias_Beert.webp" alt="Photo de Osias Beert">
+                        </figure>
+                    </div>
+                    <div id="ecran-3" class="crsl_ecran">
+                        <figure>
+                            <img src="../public/img/Paul_Bril.webp" alt="Photo de Paul Bril">
+                        </figure>
+                    </div>
+                    <div id="ecran-4" class="crsl_ecran">
+                        <figure>
+                            <img src="../public/img/Pierre_De_Cortone.webp" alt="Photo de Pierre De Cortone">
+                        </figure>
+                    </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div id="img2" class="crsl_img">
-            <figure>
-                <img src="./public/img/The_Embarkation_of_a_Queen,_1615s_Agostino_Tassi.webp" alt="image 2">
-                <figcaption>The Embarkation of a Queen, 1615s, Agostino Tassi</figcaption>
-            </figure>
-        </div>
-        <div id="img3" class="crsl_img">
-            <figure>
-                <img src="./public/img/Title_page_of_the_Flora,_1638_Pierre_De_Cortone.webp" alt="image 3">
-                <figcaption>Title Page of the Flora, 1638, Pierre De Cortone</figcaption>
-            </figure>
-        </div>
-        <div id="img4" class="crsl_img">
-            <figure>
-                <img src="/public/img/Study_of_the_age_of_silver,_1637_Pierre_De_Cortone.webp" alt="image 4">
-                <figcaption>Study of the Age of Silver, 1637, Pierre De Cortone</figcaption>
-            </figure>
-        </div>
-    </div>
-</div>
 
         Carrousel des artistes
 
