@@ -1,0 +1,17 @@
+/*.carsl_prt-img {
+    display: flex;
+    width: 100%;
+    overflow-x: scroll;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+    margin: 0%; 
+    }
+  .crsl_img {
+    flex: none;
+    width: 100%;
+    scroll-snap-align: start;
+    margin: 0%; 
+    }
+  .carrousel_ecran figure {
+    margin: 0%; 
+    }
