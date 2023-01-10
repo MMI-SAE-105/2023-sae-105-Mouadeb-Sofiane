@@ -56,12 +56,13 @@ hr{
     margin-left: 62%;
     border: none;
     background-color: #767676;
-    margin-bottom: 47%;
+    margin-bottom: 100%;
 }
 .liste_li{
-    line-height: 5;
-    margin-top: -90%;
+    line-height: 3;
+    margin-top: -130%;
 }
 .liste_liii{
-    margin-top: 10%;
+    display: inline;
+    margin-bottom: 50%;
 }
