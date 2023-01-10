@@ -15,30 +15,25 @@
   .logo__texte_ms{
     display: flex;
   }
-  .icon_twitch{
+
+.icon_facebook{
     padding-left: 15px;
-    margin-top: -1%;
-  }
-  .icon_facebook{
+}
+.icon_instagram{
     padding-left: 15px;
-  }
-  .icon_instagram{
-    padding-left: 15px;
-  }
-  .icon_twitter{
+}
+.icon_twitter{
     padding-left: 15px;
     margin-top: 1%;
-  }
-  .icon_tiktok{
-    padding-left: 4px;
-    margin-top: -2%;
-  }
-  .icon_youtube{
+}
+.icon_youtube{
     padding-left: 15px;
     margin-top: 1.2%;
-  }
-  
-  .logo_mmi {
-    margin-left: 35%;
-  }
+}
+footer{
+    background-color: #eaeaea;
+}
+.pfooter{
+    color: #000;
+}
   
