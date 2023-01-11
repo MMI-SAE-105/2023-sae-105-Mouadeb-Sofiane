@@ -24,6 +24,15 @@ h1{
 }
 h2{
     color: #ffffff;
+    margin: 3%;
+}
+h4{
+    font-family: 'Abel';
+    color: #EAEAEA;
+}
+h3{
+    font-family: 'Agraham';
+    color: #EAEAEA;
 }
 .btn1{
     padding: 3px 23px;
@@ -117,5 +126,11 @@ figcaption{
 }
 .h1comp{
     margin-left: 2%;
+    text-align: center;
+}
+.h3d{
+    text-align: center;
+}
+.h4d{
     text-align: center;
 }
