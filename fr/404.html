@@ -1,11 +1,29 @@
 <!DOCTYPE html>
+<link rel="stylesheet" href="../src/styles.css">
 <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
 <title>404 - Page Non trouvée</title>
 <h1>Page Non trouvée</h1>
 <form action="https://duckduckgo.com/" method="GET" 
     x-data="{ q:'', }" 
     x-on:submit="q = q + ' site:mmimontbeliard.com'">
-    <label for="q">Que rechercher-vous :</label>
-    <input type="text" id="q" name="q" x-model="q">
-    <button type="submit">Rechercher</button>
+    <label for="q">Retourner sur le </label>
+    <button type="submit">Menu</button>
 </form>
+<div aria-label="Orange and tan hamster running in a metal wheel" role="img" class="wheel-and-hamster">
+	<div class="wheel"></div>
+	<div class="hamster">
+		<div class="hamster__body">
+			<div class="hamster__head">
+				<div class="hamster__ear"></div>
+				<div class="hamster__eye"></div>
+				<div class="hamster__nose"></div>
+			</div>
+			<div class="hamster__limb hamster__limb--fr"></div>
+			<div class="hamster__limb hamster__limb--fl"></div>
+			<div class="hamster__limb hamster__limb--br"></div>
+			<div class="hamster__limb hamster__limb--bl"></div>
+			<div class="hamster__tail"></div>
+		</div>
+	</div>
+	<div class="spoke"></div>
+</div>
