@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en" x-data="{ menuIsOpen:false }"></html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accueil</title>
+    <link rel="stylesheet" href="src/styles.css">
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <script defer src="https://unpkg.com/alpinejs%22%3E"></script>
+    <style>
+        .menu {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background-color: #767676;
+            display: grid;
+            place-content: center;
+            z-index: 2;
+        }
+        .header_menuBtn {
+            position: relative;
+            z-index: 10;
+        }
+          .noscroll,
+          .noscroll body {
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="../indexgb.html">
+            <img class="logo_principal" src="../public/img/baroque-expo.webp" alt="Logo du Site Internet">
+        </a>
+        <button class="header_menu btndumenu" @click="menuIsOpen = ! menuIsOpen">
+            <img aria-controls="mainNav" src="../public/icon/menu.svg" alt="Icone de menu">
+        </button>
+        <nav id="mainNav" x-show="menuIsOpen" x-transition.duration.800ms class="menu">
+    
+            <button class="icon_cross_menu imgcross" @click="menuIsOpen = ! menuIsOpen">
+                <img class="icon_cross_menu" src="../public/icon/x.svg" alt="Icone croix pour quitter le menu">
+            </button>
+            <ul class="liste_li">
+                <li><a href="../fr/exposition.html" style="color: #FFFFFF" class="textmenu"><h1>Exposition</h1></a></li>
+                <hr>
+                <li><a href="../fr/mouvement_artistique.html" style="color: #FFFFFF" class="textmenu"><h1 class="textmenu">Mouvement artistique</h1></a></li>
+                <hr>                  
+                    <section x-data="{open:false}">
+                        <li><a style="color: #FFFFFF" @click="open = !open" class="textmenu"><h1>Artistes</h1></a></li>
+                        <hr>                      
+                            <h2 x-show="open" x-transition.duration.700ms>                      
+                                <a href="billeterie.html" class="text_accordeon">                        
+                                    <li><a href="../fr/PierreDeCortone.html" style="color: #FFFFFF" class="textmenu1"><p class="textmenu1">Pierre De Cortone</p></a></li>
+                                    <li><a href="../fr/Osias_Beert.html" style="color: #FFFFFF" class="textmenu1"><p class="textmenu1">Osias Beert</p></a></li>
+                                    <li><a href="../fr/agostino_tassi.html" style="color: #FFFFFF" class="textmenu1"><p class="textmenu1">Agostino Tassi</p></a></li>
+                                    <li><a href="../fr/PaulBril.html" style="color: #FFFFFF" class="textmenu1"><p class="textmenu1">Paul Bril</p></a></li>                    
+                                </a>     
+                            </h2>
+                    </section>
+            </ul>
+            <ul class="liste_liii">
+                <li><a href="../fr/contact.html" style="color: #FFFFFF"  class="textmenu"><h1>Contact</h1></a></li>
+                <hr>
+            </ul> 
+        </nav>         
+    </header>
+</head>
+<body>
+    <h1 class="h1title">Accueil</h1>
+    <hr>
+        <p>
+            Bienvenu sur baroque expo, l'exposition auquel vous devriez assister 
+            si vous vous intéressez au mouvement baroque. 
+        </p>
+
+            <p>
+                L'exposition aura lieu du 13 avril au 23 juin 2021.
+                Tous les jours de 11h à 20h, sauf le lundi.
+                L'adresse est la Fondation Cartier, 261 Bd Raspail, 75014 Paris.
+            </p>
+                <p>Le mouvement artistique de l'exposition est le mouvement baroque.</p>
+                    <p>Les œuvres qui seront présentes ont toutes une page dédié.</p>
+                    <p>Voici ces 2 œuvres.</p>
+                <div class="page2">
+                    <figure>
+                        <img class="desc" src="./public/img/TheEmbarkationofaQueen,1615sAgostinoTassi.webp" alt="The Embarkation of a Queen,  Agostino Tassi">
+                        <figcaption class="pfig1">The Embarkation of a Queen,  Agostino Tassi</a></figcaption>
+                    </figure>
+                    <figure>
+                        <img class="desc2" class="imgpaulbrilvofb" src="./public/img/ViewofBracciano,1620PaulBril.webp" alt="A view of bracciano, Paul Bril">
+                    <figcaption class="pfig1">A view of bracciano, Paul Bril</figcaption>
+                    </figure>
+                </div>
+                    
+                    <hr>
+                <p>
+                    Le mouvement artistique de notre exposition sera le mouvement baroque. 
+                    En savoir plus sur toutes les œuvres qui seront présente. Et aussi 
+                    l'histoire du mouvement et de ces œuvres.
+                </p>
+                <a href="./fr/mouvement_artistique.html"><button class="btn1">En savoir plus</button></a>
+                <hr>
+                <p>Les œuvres de ces artistes seront présentes.</p>
+        <div class="carrousel-a">      
+            <div class="carrousel" x-data="{hrefCourant:'#ecran-1',}">
+                <button @click="const p =$refs.parent ;  p.scrollLeft-= p.clientWidth" class="carrousel_btn carrousel_btn-avant" aria-label="slide précedant"><img src="/public/icon/arrow-left(1).svg" alt="flèche gauche"></button><button @click="const p =$refs.parent ;  p.scrollLeft+= p.clientWidth" class="carrousel_btn carrousel_btn-apres" aria-label="slide suivant"><img src="/public/icon/arrow-right(1).svg" alt="flèche droite"></button>
+                <div class="carrousel_parent-ecrans" x-ref="parent" @scroll.debounce.250ms.passive="hrefCourant = '#'+
+                                [...$refs.parent.children]
+                                .find(e=>e.getBoundingClientRect().x>=0)
+                                .id">
+                    <div id="ecran-1" class="carrousel_ecran">
+                        <figure>
+                            <a href="/fr/agostino_tassi.html"><img src="/public/img/AgostinoTassi_.webp" alt="image ecran 1"></a>
+                            <figcaption><a class="pfig" href="/fr/agostino_tassi.html">Agostino Tassi</figcaption></a>
+                        </figure>
+                    </div>
+                    <div id="ecran-2" class="carrousel_ecran">
+                        <figure>
+                            <a href="/fr/Osias_Beert.html"><img src="/public/img/OsiasBeert_.webp" alt="image ecran 2"></a>
+                            <figcaption><a class="pfig" href="/fr/Osias_Beert.html">Osias Beert</a></figcaption>
+                        </figure>
+                    </div>
+                    <div id="ecran-3" class="carrousel_ecran">
+                        <figure>
+                            <a href="/fr/PaulBril.html"><img src="/public/img/PaulBril_.webp" alt="image ecran 3"></a>
+                            <figcaption><a class="pfig" href="/fr/PaulBril.html">Paul Bril</figcaption></a>
+                        </figure>
+                    </div>
+                    <div id="ecran-4" class="carrousel_ecran">
+                        <figure>
+                            <a href="/fr/PierreDeCortone.html"><img src="/public/img/PierreDeCortone_.webp" alt="image ecran 4"></a>
+                            <figcaption><a class="pfig" href="/fr/PierreDeCortone_.html">Pierre De Cortone</a></figcaption>
+                        </figure>
+                    </div>
+                </div>
+            </div>
+        </div>
+                <hr>
+                <p>
+                    Vous pouvez naviguer sur ce site pour découvrir les œuvres qui seront 
+                    exposer lors de notre exposition.  
+                    Et pour accéder à la billetterie.
+                </p>
+                <a href="./fr/exposition.html"><button class="btn2">Billetterie et exposition</button></a>
+                <hr>
+                <p>Pour toutes les informations complémentaires veuillez passer par la page contact.</p>
+                <a href="./fr/contact.html"><button class="btn3">Contact</button></a>
+
+            <footer>
+                <div class="logo__texte_ms">
+                    <img class="logo_ms" src="public/img/baroque-expo.webp" alt="Logo du site">
+                    <h3 class="h3footer" class="created_by_footer"></h3>
+                </div>
+                <p class="pfooter">Mention légale</p>   
+                <p class="pfooter">Contact</p> 
+                <p class="pfooter">Fondation Cartier, 261 Bd Raspail, 75014 Paris</p>    
+                <h4 class="h4footer">Suivre l'exposition</h4>
+                <div class="icon">
+                    <div class="icon_facebook"><a href=""><img class="face2" src="/public/icon/facebook2.svg" alt="logo facebook"></a></div>
+                    <div class="icon_twitter"><a href=""><img class="twi2" src="public/icon/twitter2.svg" alt="logo twitter"></a></div> 
+                    <div class="icon_instagram"><a href=""><img class="insta2" src="public/icon/instagram2.svg" alt="logo instagram"></a></div>     
+                    <div class="icon_youtube"><a href=""><img class="you2" src="./public/icon/youtube2.svg" alt="logo youtube"></a></div>     
+                </div>               
+                    <p class="pfooter">Ce projet a été réaliser dans le cadre d'un exercice pédagogique au 
+                    <a href="http://mmimontbeliard.com/" style="color: #444444" class="footer_link" target="_blank">département MMI de Montbéliard</a></p>
+                    <p class="pfooter">Université Nord Franche-Comté</p>
+                    <p class="pfooter"><a href="http://mmimontbeliard.com/" style="color: #444444" class="footer_link" class="pfooter" target="_blank">IUT MMI Montbéliard</a></p>
+            </footer>        
+        </body>
+</html>
