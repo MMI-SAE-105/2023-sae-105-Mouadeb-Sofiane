@@ -56,8 +56,9 @@ hr{
     margin-left: 62%;
     border: none;
     background-color: #767676;
-    margin-bottom: 100%;
+    margin-bottom: 95%;
 }
+
 .liste_li{
     line-height: 3;
     margin-top: -130%;
@@ -71,6 +72,6 @@ hr{
 .textmenu{
     text-decoration: none;
 }
-.textmenu1{
+.textmenu{
     text-decoration: none;
 }
