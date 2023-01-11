@@ -8,54 +8,65 @@
     <link rel="stylesheet" href="../src/styles.css">
     <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <script defer src="https://unpkg.com/alpinejs%22%3E"></script>
-</head>
-<style>
-    .menu {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100vw;
-        height: 100vh;
-        background-color: #767676;
-        display: grid;
-        place-content: center;
-        z-index: 2;
-    }
-    .header_menuBtn {
-        position: relative;
-        z-index: 10;
-    }
-      .noscroll,
-      .noscroll body {
-        overflow: hidden;
-    }
-</style>
+    <style>
+        .menu {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background-color: #767676;
+            display: grid;
+            place-content: center;
+            z-index: 2;
+        }
+        .header_menuBtn {
+            position: relative;
+            z-index: 10;
+        }
+          .noscroll,
+          .noscroll body {
+            overflow: hidden;
+        }
+    </style>
 </head>
 <body>
-<header>
-    <a href="../index.html">
-        <img class="logo_principal" src="../public/img/baroque-expo.webp" alt="Logo du Site Internet">
-    </a>
-    <button class="header_menu btndumenu" @click="menuIsOpen = ! menuIsOpen">
-        <img aria-controls="mainNav" src="../public/icon/menu.svg" alt="Icone de menu">
-    </button>
-    <nav id="mainNav" x-show="menuIsOpen" x-transition.duration.800ms class="menu">
-
-        <button class="icon_cross_menu imgcross" @click="menuIsOpen = ! menuIsOpen">
-            <img class="icon_cross_menu" src="../public/icon/x.svg" alt="Icone croix pour quitter le menu">
+    <header>
+        <a href="../index.html">
+            <img class="logo_principal" src="../public/img/baroque-expo.webp" alt="Logo du Site Internet">
+        </a>
+        <button class="header_menu btndumenu" @click="menuIsOpen = ! menuIsOpen">
+            <img aria-controls="mainNav" src="../public/icon/menu.svg" alt="Icone de menu">
         </button>
-        <ul class="liste_li">
-            <li><a href="../fr/exposition.html" style="color: #FFFFFF" class="textmenu"><h1>Exposition</h1></a></li>
-            <hr>
-            <li><a href="../fr/mouvement_artistique.html" style="color: #FFFFFF" class="textmenu"><h1 class="textmenu">Mouvement artistique</h1></a></li>
-            <hr>
-        </ul>
-        <ul class="liste_liii">
-            <li><a href="../fr/contact.html" style="color: #FFFFFF"  class="textmenu"><h1>Contact</h1></a></li>
-            <hr>
-        </ul> 
-    </nav>         
-</header>
+        <nav id="mainNav" x-show="menuIsOpen" x-transition.duration.800ms class="menu">
+    
+            <button class="icon_cross_menu imgcross" @click="menuIsOpen = ! menuIsOpen">
+                <img class="icon_cross_menu" src="../public/icon/x.svg" alt="Icone croix pour quitter le menu">
+            </button>
+            <ul class="liste_li">
+                <li><a href="../fr/exposition.html" style="color: #FFFFFF" class="textmenu"><h1>Exposition</h1></a></li>
+                <hr>
+                <li><a href="../fr/mouvement_artistique.html" style="color: #FFFFFF" class="textmenu"><h1 class="textmenu">Mouvement artistique</h1></a></li>
+                <hr>                  
+                    <section x-data="{open:false}">
+                        <li><a style="color: #FFFFFF" @click="open = !open" class="textmenu"><h1>Artistes</h1></a></li>
+                        <hr>                      
+                            <h2 x-show="open" x-transition.duration.700ms>                      
+                                <a href="billeterie.html" class="text_accordeon">                        
+                                    <li><a href="../fr/PierreDeCortone.html" style="color: #FFFFFF" class="textmenu1"><p class="textmenu1">Pierre De Cortone</p></a></li>
+                                    <li><a href="../fr/Osias_Beert.html" style="color: #FFFFFF" class="textmenu1"><p class="textmenu1">Osias Beert</p></a></li>
+                                    <li><a href="../fr/agostino_tassi.html" style="color: #FFFFFF" class="textmenu1"><p class="textmenu1">Agostino Tassi</p></a></li>
+                                    <li><a href="../fr/PaulBril.html" style="color: #FFFFFF" class="textmenu1"><p class="textmenu1">Paul Bril</p></a></li>                    
+                                </a>     
+                            </h2>
+                    </section>
+            </ul>
+            <ul class="liste_liii">
+                <li><a href="../fr/contact.html" style="color: #FFFFFF"  class="textmenu"><h1>Contact</h1></a></li>
+                <hr>
+            </ul> 
+        </nav>         
+    </header>
 </head>
 <body>
     <h1>Paul Bril</h1>
