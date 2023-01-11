@@ -65,3 +65,10 @@ textarea {
     color: #2C2C2C;
 }
 
+.btnbilletrie{
+    background-color: #EAEAEA;
+    color: #2C2C2C;
+    font-family: 'Kotta One';
+    padding: 3px 23px;
+    border-radius: 60px;
+}

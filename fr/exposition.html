@@ -38,7 +38,16 @@
         </p>
     
     <p>Le mouvement artistique de l'exposition est le mouvement baroque.</p>
-    <button>Billetterie</button>
+    <div class="accordeon">                  
+        <section x-data="{open:false}">
+            <button @click="open = !open" class="btnbilletrie">Billeterie</button>                      
+                <h2 x-show="open">                      
+                    <a href="billeterie.html">                        
+                        <TextBilleterie>La billeterie n'est pas encore disponible. Pour tout renseignement en plus veuillez nous <a href="/fr/contact.html">contacter.</a></TextBilleterie>                    
+                    </a>     
+                </h2>
+        </section>
+    </div>
 
     <h2>Les œuvres artistiques qui seront présentes à l'exposition</h2>
 
