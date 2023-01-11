@@ -15,8 +15,28 @@
         Osias né à 1580, Anvers et décède à 1624, Anvers.
     </p>
     <h2>Les 2 œuvres présentes à l'exposition</h2>
-
-    carrousel sur les 2 oeuvres de Osias Beert
+    <div class="carrousel-a">      
+        <div class="carrousel" x-data="{hrefCourant:'#ecran-1',}">
+            <button @click="const p =$refs.parent ;  p.scrollLeft-= p.clientWidth" class="carrousel_btn carrousel_btn-avant" aria-label="slide précedant"><img src="/public/icon/arrow-left(1).svg" alt="flèche gauche"></button><button @click="const p =$refs.parent ;  p.scrollLeft+= p.clientWidth" class="carrousel_btn carrousel_btn-apres" aria-label="slide suivant"><img src="/public/icon/arrow-right(1).svg" alt="flèche droite"></button>
+            <div class="carrousel_parent-ecrans" x-ref="parent" @scroll.debounce.250ms.passive="hrefCourant = '#'+
+                            [...$refs.parent.children]
+                            .find(e=>e.getBoundingClientRect().x>=0)
+                            .id">
+                <div id="ecran-1" class="carrousel_ecran">
+                    <figure>
+                        <a href="/fr/StillLifewithOysters,OsiasBeert.html"><img src="/public/img/StillLifewithOysters,OsiasBeert.webp" alt="image ecran 1"></a>
+                        <figcaption><a class="pfig" href="/fr/StillLifewithOysters,OsiasBeert.html">Still Life with Oysters, Osias Beert</figcaption></a>
+                    </figure>
+                </div>
+                <div id="ecran-2" class="carrousel_ecran">
+                    <figure>
+                        <a href="/fr/DisheswithOysters,Fruit,andWine,1624OsiasBeert.html"><img src="/public/img/DisheswithOysters,Fruit,andWine,1624OsiasBeert.webp" alt="image ecran 2"></a>
+                        <figcaption><a class="pfig" href="/fr/DisheswithOysters,Fruit,andWine,1624OsiasBeert.html">Dishes with Oysters, Fruit, and Wine, 1624, Osias Beert.webp</a></figcaption>
+                    </figure>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <h2>Son histoire</h2>
         <p>
