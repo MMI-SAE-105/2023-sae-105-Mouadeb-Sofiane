@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en" x-data="{ menuIsOpen:false }"></html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Osias Beert</title>
+    <link rel="stylesheet" href="../src/styles.css">
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <script defer src="https://unpkg.com/alpinejs%22%3E"></script>
+    <style>
+        .menu {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background-color: #767676;
+            display: grid;
+            place-content: center;
+            z-index: 2;
+        }
+        .header_menuBtn {
+            position: relative;
+            z-index: 10;
+        }
+          .noscroll,
+          .noscroll body {
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="../index.html">
+            <img class="logo_principal" src="../public/img/baroque-expo.webp" alt="Logo du Site Internet">
+        </a>
+        <button class="header_menu btndumenu" @click="menuIsOpen = ! menuIsOpen">
+            <img aria-controls="mainNav" src="../public/icon/menu.svg" alt="Icone de menu">
+        </button>
+        <nav id="mainNav" x-show="menuIsOpen" x-transition.duration.800ms class="menu">
+    
+            <button class="icon_cross_menu imgcross" @click="menuIsOpen = ! menuIsOpen">
+                <img class="icon_cross_menu" src="../public/icon/x.svg" alt="Icone croix pour quitter le menu">
+            </button>
+            <ul class="liste_li">
+                <li><a href="../fr/exposition.html" style="color: #FFFFFF" class="textmenu"><h1>Exposition</h1></a></li>
+                <hr>
+                <li><a href="../fr/mouvement_artistique.html" style="color: #FFFFFF" class="textmenu"><h1 class="textmenu">Mouvement artistique</h1></a></li>
+                <hr>                  
+                    <section x-data="{open:false}">
+                        <li><a style="color: #FFFFFF" @click="open = !open" class="textmenu"><h1>Artistes</h1></a></li>
+                        <hr>                      
+                            <h2 x-show="open" x-transition.duration.700ms>                      
+                                <a href="billeterie.html" class="text_accordeon">                        
+                                    <li><a href="../fr/PierreDeCortone.html" style="color: #FFFFFF" class="textmenu1"><p class="textmenu1">Pierre De Cortone</p></a></li>
+                                    <li><a href="../fr/Osias_Beert.html" style="color: #FFFFFF" class="textmenu1"><p class="textmenu1">Osias Beert</p></a></li>
+                                    <li><a href="../fr/agostino_tassi.html" style="color: #FFFFFF" class="textmenu1"><p class="textmenu1">Agostino Tassi</p></a></li>
+                                    <li><a href="../fr/PaulBril.html" style="color: #FFFFFF" class="textmenu1"><p class="textmenu1">Paul Bril</p></a></li>                    
+                                </a>     
+                            </h2>
+                    </section>
+            </ul>
+            <ul class="liste_liii">
+                <li><a href="../fr/contact.html" style="color: #FFFFFF"  class="textmenu"><h1>Contact</h1></a></li>
+                <hr>
+                <li><a href="../en/Osias_Beertgb.html"><img src="./public/icon/royaume-uni.svg" alt="icone pour aller en anglais" class="icon-gb"></a></li>
+            </ul> 
+        </nav>         
+    </header>
+</head>
+<body>
+    <h1 class="h1osi">Osias Beert</h1>
+    <hr>
+    <p>
+        Osias né à 1580, Anvers et décède à 1624, Anvers.
+    </p>
+    <h2>Les 2 œuvres présentes à l'exposition</h2>
+    <div class="carrousel-a">      
+        <div class="carrousel" x-data="{hrefCourant:'#ecran-1',}">
+            <button @click="const p =$refs.parent ;  p.scrollLeft-= p.clientWidth" class="carrousel_btn carrousel_btn-avant" aria-label="slide précedant"><img src="/public/icon/arrow-left(1).svg" alt="flèche gauche"></button><button @click="const p =$refs.parent ;  p.scrollLeft+= p.clientWidth" class="carrousel_btn carrousel_btn-apres" aria-label="slide suivant"><img src="/public/icon/arrow-right(1).svg" alt="flèche droite"></button>
+            <div class="carrousel_parent-ecrans" x-ref="parent" @scroll.debounce.250ms.passive="hrefCourant = '#'+
+                            [...$refs.parent.children]
+                            .find(e=>e.getBoundingClientRect().x>=0)
+                            .id">
+                <div id="ecran-1" class="carrousel_ecran">
+                    <figure>
+                        <a href="/fr/StillLifewithOysters,OsiasBeert.html"><img src="/public/img/StillLifewithOysters,OsiasBeert_.webp" alt="image ecran 1"></a>
+                        <figcaption><a class="pfig" href="/fr/StillLifewithOysters,OsiasBeert.html">Still Life with Oysters, Osias Beert</figcaption></a>
+                    </figure>
+                </div>
+                <div id="ecran-2" class="carrousel_ecran">
+                    <figure>
+                        <a href="/fr/DisheswithOysters,Fruit,andWine,1624OsiasBeert.html"><img src="/public/img/DisheswithOysters,Fruit,andWine,1624OsiasBeert_.webp" alt="image ecran 2"></a>
+                        <figcaption><a class="pfig" href="/fr/DisheswithOysters,Fruit,andWine,1624OsiasBeert.html">Dishes with Oysters, Fruit, and Wine, 1624, Osias Beert</a></figcaption>
+                    </figure>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <h2>Son histoire</h2>
+        <p>
+            On sait peu de chose sur la jeunesse de cet artiste. Il est probablement né à 
+            Courtrai vers 1580. Peu après, au printemps 1582, la famille déménagea à Anvers. 
+            À partir de 1596, il est mentionné comme l'élève du peu connu Andries van Baseroo 
+            (ou 'van Baseroo'). Il devint maître de la guilde de Saint-Luc d'Anvers en 1602. 
+            Il se marie en janvier 1606 avec Margriet (ou Margarita) Ykens, dont il eut en 
+            1622 un fils, Osias Beert le jeune, qui fut aussi un maître de la guilde de 
+            Saint-Luc à partir de 1645. Osias Beert le jeune, ainsi que les élèves de Beert 
+            l'Ancien, sont probablement responsables des nombreuses répliques et variantes 
+            des compositions de Beert l'Ancien qui existent encore aujourd'hui. Margriet Ykens 
+            fut la tante de Frans Ykens. Osias Beert l'Ancien fut membre de la chambre de 
+            rhétorique Den Olijftak à partir de 16154.
+        </p>
+        <p>
+            En même temps que ses activités de peintre, il travailla dans le négoce du liège pour 
+            augmenter ses ressources. Le fait qu'il ait eu cette deuxième profession suggère qu'il 
+            n'avait pas un revenu élevé en tant que peintre. Il habita dans le quartier des pêcheurs, 
+            un quartier modeste d'Anvers4. Après sa mort, sa veuve Margriet Ykens a dû vendre les 
+            meubles et les tableaux du couple pour payer une dette 
+            envers le peintre David Rijckaert II qui leur avait prêté de l'argent pour ouvrir leur 
+            négoce. 
+        </p>
+        <p>
+            Il forma dans son atelier quelques élèves entre 1605 et 1618 dont: Hans Ickens, 
+            Pieter Doens, son neveu Frans Ykens, Paulus Pontius, Jan Willemssen 
+            et Frans van der Borcht. Il a collaboré avec Rubens comme dans le Pausias et Glycéra.
+        </p>
+        <p>
+            Osias Beert est principalement connu comme peintre de fleurs et ontbijtjes 
+            (natures mortes « de petit déjeuner »), genres dans lesquels il a joué un rôle de pionnier. 
+            Il existe douze tableaux signés ou monogrammés de lui et il n'a jamais daté ses tableaux. 
+            Trois de ses tableaux sur cuivre portent la marque du fabricant de panneaux Pieter Stas 
+            ainsi que les dates 1607, 1608 et 1609. Même si le manque d'œuvres datées a rendu difficile 
+            la datation de son travail, l'analyse stylistique permet une chronologie approximative. 
+            Les œuvres avec un point de vue élevé et peu de chevauchement d'objets sont considérées 
+            comme antérieures à celles avec un point de vue inférieur et une disposition 
+            compacte des objets. Ces dernières œuvres ont également une meilleure cohérence spatiale.
+        </p>   
+        <p>
+            Beert a créé un nouveau type de nature morte parmi les peintures de fleurs qui est 
+            devenue l'une de ses spécialités: la nature morte de fleurs complexe. Dans ces œuvres, 
+            Beert combine des fleurs dans deux, trois, voire quatre récipients dans le même tableau, 
+            créant ainsi une composition complexe3. Ses natures mortes de fleurs, montrant souvent un 
+            vase de fleurs dans une niche peu profonde ou un panier rempli de fleurs, comme dans le 
+            Panier de fleurs (Musée des Beaux-Arts de Houston), rappellent les œuvres d'Ambrosius 
+            Bosschaert9. Chaque fleur est dépeinte à son apogée et avec beaucoup de détail. Les fleurs 
+            représentées dans le même bouquet sont des fleurs qui fleurissent pendant différentes 
+            saisons et n'auraient jamais pu être réellement rassemblées dans le même vase. Osias 
+            Beert répète souvent des motifs dans ses natures mortes et répète parfois de grandes 
+            parties de la même composition. Les plats de porcelaine chinoise 
+            Wanli avec des fruits sont une caractéristique récurrente de la nature morte de Beert.
+        </p>
+        <footer>
+            <div class="logo__texte_ms">
+                <img class="logo_ms" src="../public/img/baroque-expo.webp" alt="Logo du site">
+                <h3 class="h3footer" class="created_by_footer"></h3>
+            </div>
+            <p class="pfooter">Mention légale</p>   
+            <p class="pfooter">Contact</p> 
+            <p class="pfooter">Fondation Cartier, 261 Bd Raspail, 75014 Paris</p>    
+            <h4 class="h4footer">Suivre l'exposition</h4>
+            <div class="icon">
+                <div class="icon_facebook"><a href="https://www.facebook.com/FondationCartier/?locale=fr_FR"><img class="face2" src="../public/icon/facebook2.svg" alt="logo facebook"></a></div>
+                <div class="icon_twitter"><a href="https://twitter.com/Fond_Cartier?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor"><img class="twi2" src="../public/icon/twitter2.svg" alt="logo twitter"></a></div> 
+                <div class="icon_instagram"><a href="https://www.instagram.com/fondationcartier/?hl=fr"><img class="insta2" src="../public/icon/instagram2.svg" alt="logo instagram"></a></div>     
+                <div class="icon_youtube"><a href="https://www.youtube.com/user/fondationcartier"><img class="you2" src="../public/icon/youtube2.svg" alt="logo youtube"></a></div>     
+            </div>               
+                <p class="pfooter">Ce projet a été réaliser dans le cadre d'un exercice pédagogique au 
+                <a href="http://mmimontbeliard.com/" style="color: #444444" class="footer_link" target="_blank">département MMI de Montbéliard</a></p>
+                <p class="pfooter">Université Nord Franche-Comté</p>
+                <p class="pfooter"><a href="http://mmimontbeliard.com/" style="color: #444444" class="footer_link" class="pfooter" target="_blank">IUT MMI Montbéliard</a></p>
+        </footer>       
+
+</body>
+</html>

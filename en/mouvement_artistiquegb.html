@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en" x-data="{ menuIsOpen:false }"></html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mouvement artistique</title>
+    <link rel="stylesheet" href="../src/styles.css">
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <script defer src="https://unpkg.com/alpinejs%22%3E"></script>
+    <style>
+        .menu {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background-color: #767676;
+            display: grid;
+            place-content: center;
+            z-index: 2;
+        }
+        .header_menuBtn {
+            position: relative;
+            z-index: 10;
+        }
+          .noscroll,
+          .noscroll body {
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="../index.html">
+            <img class="logo_principal" src="../public/img/baroque-expo.webp" alt="Logo du Site Internet">
+        </a>
+        <button class="header_menu btndumenu" @click="menuIsOpen = ! menuIsOpen">
+            <img aria-controls="mainNav" src="../public/icon/menu.svg" alt="Icone de menu">
+        </button>
+        <nav id="mainNav" x-show="menuIsOpen" x-transition.duration.800ms class="menu">
+    
+            <button class="icon_cross_menu imgcross" @click="menuIsOpen = ! menuIsOpen">
+                <img class="icon_cross_menu" src="../public/icon/x.svg" alt="Icone croix pour quitter le menu">
+            </button>
+            <ul class="liste_li">
+                <li><a href="../fr/exposition.html" style="color: #FFFFFF" class="textmenu"><h1>Exposition</h1></a></li>
+                <hr>
+                <li><a href="../fr/mouvement_artistique.html" style="color: #FFFFFF" class="textmenu"><h1 class="textmenu">Mouvement artistique</h1></a></li>
+                <hr>                  
+                    <section x-data="{open:false}">
+                        <li><a style="color: #FFFFFF" @click="open = !open" class="textmenu"><h1>Artistes</h1></a></li>
+                        <hr>                      
+                            <h2 x-show="open" x-transition.duration.700ms>                      
+                                <a href="billeterie.html" class="text_accordeon">                        
+                                    <li><a href="../fr/PierreDeCortone.html" style="color: #FFFFFF" class="textmenu1"><p class="textmenu1">Pierre De Cortone</p></a></li>
+                                    <li><a href="../fr/Osias_Beert.html" style="color: #FFFFFF" class="textmenu1"><p class="textmenu1">Osias Beert</p></a></li>
+                                    <li><a href="../fr/agostino_tassi.html" style="color: #FFFFFF" class="textmenu1"><p class="textmenu1">Agostino Tassi</p></a></li>
+                                    <li><a href="../fr/PaulBril.html" style="color: #FFFFFF" class="textmenu1"><p class="textmenu1">Paul Bril</p></a></li>                    
+                                </a>     
+                            </h2>
+                    </section>
+            </ul>
+            <ul class="liste_liii">
+                <li><a href="../fr/contact.html" style="color: #FFFFFF"  class="textmenu"><h1>Contact</h1></a></li>
+                <hr>
+                <li><a href="../en/mouvement_artistiquegb.html"><img src="./public/icon/royaume-uni.svg" alt="icone pour aller en anglais" class="icon-gb"></a></li>
+            </ul> 
+        </nav>         
+    </header>
+</head>
+<body>
+    <h1 class="h1titleh">Mouvement artistique</h1>
+    <hr>
+    <h2>Le mouvement baroque</h2>
+        <p>
+        Du milieu du XVIe siècle au XVIIIe siècle, le style baroque a marqué l'art et l'architecture européens, 
+        sans oublier les domaines de la musique et de la danse. Caractérisé par le goût du mouvement, de la
+        dramatisation, de l'exubérance décorative, le baroque est un paradigme esthétique complexe qui a pour 
+        but de surprendre et d'émouvoir les spectateurs. Mouvement de grande ampleur, il s'est rapidement 
+        répandu de l'Italie vers les grands pays d'Europe.
+        </p>
+        <h2>Les 4 artistes de ce mouvement pour l'exposition</h2>
+        <div class="carrousel-a">      
+            <div class="carrousel" x-data="{hrefCourant:'#ecran-1',}">
+                <button @click="const p =$refs.parent ;  p.scrollLeft-= p.clientWidth" class="carrousel_btn carrousel_btn-avant" aria-label="slide précedant"><img src="/public/icon/arrow-left(1).svg" alt="flèche gauche"></button><button @click="const p =$refs.parent ;  p.scrollLeft+= p.clientWidth" class="carrousel_btn carrousel_btn-apres" aria-label="slide suivant"><img src="/public/icon/arrow-right(1).svg" alt="flèche droite"></button>
+                <div class="carrousel_parent-ecrans" x-ref="parent" @scroll.debounce.250ms.passive="hrefCourant = '#'+
+                                [...$refs.parent.children]
+                                .find(e=>e.getBoundingClientRect().x>=0)
+                                .id">
+                    <div id="ecran-1" class="carrousel_ecran">
+                        <figure>
+                            <a href="/fr/agostino_tassi.html"><img src="/public/img/AgostinoTassi_.webp" alt="image ecran 1"></a>
+                            <figcaption><a class="pfig" href="/fr/agostino_tassi.html">Agostino Tassi</figcaption></a>
+                        </figure>
+                    </div>
+                    <div id="ecran-2" class="carrousel_ecran">
+                        <figure>
+                            <a href="/fr/Osias_Beert.html"><img src="/public/img/OsiasBeert_.webp" alt="image ecran 2"></a>
+                            <figcaption><a class="pfig" href="/fr/Osias_Beert.html">Osias Beert</a></figcaption>
+                        </figure>
+                    </div>
+                    <div id="ecran-3" class="carrousel_ecran">
+                        <figure>
+                            <a href="/fr/PaulBril.html"><img src="/public/img/PaulBril_.webp" alt="image ecran 3"></a>
+                            <figcaption><a class="pfig" href="/fr/PaulBril.html">Paul Bril</figcaption></a>
+                        </figure>
+                    </div>
+                    <div id="ecran-4" class="carrousel_ecran">
+                        <figure>
+                            <a href="/fr/PierreDeCortone.html"><img src="/public/img/PierreDeCortone_.webp" alt="image ecran 4"></a>
+                            <figcaption><a class="pfig" href="/fr/PierreDeCortone.html">Pierre De Cortone</a></figcaption>
+                        </figure>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+            <h2>L'histoire de ce mouvement</h2>
+                <p>
+                    L'Italie est la terre d'origine du baroque, courant qui émerge aux alentours de 1600. 
+                    Ce style plein de grandiloquence est encouragé par l'Église catholique romaine qui souhaite 
+                    répondre à la Réforme protestante en touchant le fidèle en plein cœur. Par quels moyens ? 
+                    En sollicitant ses sens, en particulier la vue, et en portant une attention particulière aux 
+                    émotions ressenties par le spectateur.
+                </p>
+                <p>
+                    Le baroque aime la dramaturgie. Il doit impressionner le visiteur des palais par des architectures complexes
+                    et des décors en trompe-l'œil ; submerger les collectionneurs en leur donnant le sentiment de posséder des 
+                    œuvres rares et originales. Le mot baroque viendrait d'ailleurs du terme portugais barroco employé pour désigner 
+                    des perles aux formes étonnantes ou imparfaites. C'est un art triomphateur qui rejette l'austérité et l'humilité. 
+                    La terminologie de « baroque » est ultérieure à la période concernée : elle est surtout en usage à partir du XVIIIe 
+                    siècle, d'abord dans une compréhension péjorative, puis laudative au cours du XIXe siècle.
+                </p>
+                <p>
+                    L'abandon de la rigueur classique au profit d'une expression plus mouvante, plus psychologique, est à mettre au 
+                    compte des boulever-sements qui s'opèrent dans la pensée européenne autour du XVIIe siècle. La révolution copernicienne 
+                    a profondément modifié la perception du cosmos. Le temps n'apparaît plus si linéaire, l'Europe découvre qu'elle n'est pas 
+                    seule sur terre mais que d'autres mondes (l'Amérique centrale et l'Amérique du Sud) l'habitent aussi. Ces découvertes, 
+                    sources de déstabilisation et de remises en question, s'expriment dans le mouvement baroque. La mort est perçue dans sa 
+                    dimension tragique, l'Homme court à la démesure, cultive l'illusion et l'ostentatoire pour fuir une destinée qui lui semble 
+                    plus incertaine.
+                </p>
+                <p>
+                    Dans le domaine des beaux-arts, plusieurs noms célèbres sont associés au baroque. Le Caravage en fait partie. S'éloignant des 
+                    principes édictés sous la Renaissance, il cultive la dramatisation par le clair-obscur et anime les personnages de mouvements 
+                    violents. Rubens, lui aussi, appartient à ce courant qui s'est diffusé dans les Flandres. À sa palette éclatante répondent des 
+                    formes elles aussi tourmentées. Ces artistes attachent une grande importance au réalisme de la représentation, mais de manière 
+                    excessive, comme s'il s'agissait de scènes en trompe-l'œil, plongeant le spectateur dans la théâtralité de l'action.
+                </p>
+            <h2>Frise sur la chronologie des sorties de leur œuvres principales</h2>
+            <div class="frise">
+                <div class="imgfrise">
+                  <div class="datefrise">1595</div>
+                  <img  src="../public/img/PaulBril_.webp" alt="Paul Bril">
+                  Paul Bril</div>
+                <div class="imgfrise">
+                  <div class="datefrise">1608</div>
+                  <img  src="../public/img/OsiasBeert_.webp" alt="Osias Beert">
+                  Osias Beert</div>
+                <div class="imgfrise">
+                  <div class="datefrise">1618</div>
+                  <img  src="../public/img/AgostinoTassi_.webp" alt="Agostino Tassi">
+                  Agostino Tassi</div>
+                <div class="imgfrise">
+                  <div class="datefrise">1625</div>
+                  <img  src="../public/img/PierreDeCortone_.webp" alt="Pierre De Cortone">
+                  Pierre De Cortone</div>
+            
+                <div class="flechefrise"></div>
+                </div>
+            </div>
+            
+            <footer>
+                <div class="logo__texte_ms">
+                    <img class="logo_ms" src="../public/img/baroque-expo.webp" alt="Logo du site">
+                    <h3 class="h3footer" class="created_by_footer"></h3>
+                </div>
+                <p class="pfooter">Mention légale</p>   
+                <p class="pfooter">Contact</p> 
+                <p class="pfooter">Fondation Cartier, 261 Bd Raspail, 75014 Paris</p>    
+                <h4 class="h4footer">Suivre l'exposition</h4>
+                <div class="icon">
+                    <div class="icon_facebook"><a href="https://www.facebook.com/FondationCartier/?locale=fr_FR"><img class="face2" src="../public/icon/facebook2.svg" alt="logo facebook"></a></div>
+                    <div class="icon_twitter"><a href="https://twitter.com/Fond_Cartier?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor"><img class="twi2" src="../public/icon/twitter2.svg" alt="logo twitter"></a></div> 
+                    <div class="icon_instagram"><a href="https://www.instagram.com/fondationcartier/?hl=fr"><img class="insta2" src="../public/icon/instagram2.svg" alt="logo instagram"></a></div>     
+                    <div class="icon_youtube"><a href="https://www.youtube.com/user/fondationcartier"><img class="you2" src="../public/icon/youtube2.svg" alt="logo youtube"></a></div>     
+                </div>               
+                    <p class="pfooter">Ce projet a été réaliser dans le cadre d'un exercice pédagogique au 
+                    <a href="http://mmimontbeliard.com/" style="color: #444444" class="footer_link" target="_blank">département MMI de Montbéliard</a></p>
+                    <p class="pfooter">Université Nord Franche-Comté</p>
+                    <p class="pfooter"><a href="http://mmimontbeliard.com/" style="color: #444444" class="footer_link" class="pfooter" target="_blank">IUT MMI Montbéliard</a></p>
+            </footer> 
+</body>
+</html>

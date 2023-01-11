@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en" x-data="{ menuIsOpen:false }"></html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Still Life with Oysters</title>
+    <link rel="stylesheet" href="../src/styles.css">
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <script defer src="https://unpkg.com/alpinejs%22%3E"></script>
+    <style>
+        .menu {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background-color: #767676;
+            display: grid;
+            place-content: center;
+            z-index: 2;
+        }
+        .header_menuBtn {
+            position: relative;
+            z-index: 10;
+        }
+          .noscroll,
+          .noscroll body {
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="../index.html">
+            <img class="logo_principal" src="../public/img/baroque-expo.webp" alt="Logo du Site Internet">
+        </a>
+        <button class="header_menu btndumenu" @click="menuIsOpen = ! menuIsOpen">
+            <img aria-controls="mainNav" src="../public/icon/menu.svg" alt="Icone de menu">
+        </button>
+        <nav id="mainNav" x-show="menuIsOpen" x-transition.duration.800ms class="menu">
+    
+            <button class="icon_cross_menu imgcross" @click="menuIsOpen = ! menuIsOpen">
+                <img class="icon_cross_menu" src="../public/icon/x.svg" alt="Icone croix pour quitter le menu">
+            </button>
+            <ul class="liste_li">
+                <li><a href="../fr/exposition.html" style="color: #FFFFFF" class="textmenu"><h1>Exposition</h1></a></li>
+                <hr>
+                <li><a href="../fr/mouvement_artistique.html" style="color: #FFFFFF" class="textmenu"><h1 class="textmenu">Mouvement artistique</h1></a></li>
+                <hr>                  
+                    <section x-data="{open:false}">
+                        <li><a style="color: #FFFFFF" @click="open = !open" class="textmenu"><h1>Artistes</h1></a></li>
+                        <hr>                      
+                            <h2 x-show="open" x-transition.duration.700ms>                      
+                                <a href="billeterie.html" class="text_accordeon">                        
+                                    <li><a href="../fr/PierreDeCortone.html" style="color: #FFFFFF" class="textmenu1"><p class="textmenu1">Pierre De Cortone</p></a></li>
+                                    <li><a href="../fr/Osias_Beert.html" style="color: #FFFFFF" class="textmenu1"><p class="textmenu1">Osias Beert</p></a></li>
+                                    <li><a href="../fr/agostino_tassi.html" style="color: #FFFFFF" class="textmenu1"><p class="textmenu1">Agostino Tassi</p></a></li>
+                                    <li><a href="../fr/PaulBril.html" style="color: #FFFFFF" class="textmenu1"><p class="textmenu1">Paul Bril</p></a></li>                    
+                                </a>     
+                            </h2>
+                    </section>
+            </ul>
+            <ul class="liste_liii">
+                <li><a href="../fr/contact.html" style="color: #FFFFFF"  class="textmenu"><h1>Contact</h1></a></li>
+                <hr>
+                <li><a href="../en/StillLifewithOysters,OsiasBeertgb.html"><img src="./public/icon/royaume-uni.svg" alt="icone pour aller en anglais" class="icon-gb"></a></li>
+            </ul> 
+        </nav>         
+    </header>
+</head>
+<body>
+    <h1 class="h1oy">Still Life with Oysters</h1>
+    <hr>
+    <img src="/public/img/StillLifewithOysters,OsiasBeert.webp" alt="Still Life with Oysters">
+    <p>Still Life with Oysters, 1633, OsiasBeert</p>
+    <p>Flemish, c. 1580 - 1624</p>
+    <p>Oil on wood, 38 cm x 53 cm</p>
+
+    <h2>Les informations sur l' œuvre</h2>
+        <p>
+            Au tournant du XVIIe siècle, un certain nombre de peintres flamands ont présenté de somptueuses natures mortes 
+            de table pour le plus grand plaisir du spectateur, et aucun ne surpassait Osias Beert. 
+            Les objets soigneusement fabriqués et les mets coûteux qu'il a représentés célèbrent un 
+            monde d'abondance et de beauté dans un style qui témoigne de la maîtrise de Beert des 
+            effets de texture et des détails réalistes.
+        </p>
+            <p>
+                Les onze huîtres disposées sur l'assiette en étain sont des exemples frappants de ce 
+                réalisme : leurs formes amorphes semblent si liquides que l'on peut facilement imaginer 
+                que les huîtres glissent de leur coquille blanche nacrée. À proximité, deux coquillages 
+                exotiques soulignent l'exceptionnelle rareté des objets et aliments disposés sur la table. 
+                De luxueux bonbons décorés de feuilles d'or remplissent le bol Wan-Li au premier plan, 
+                tandis que des raisins secs, des figues et des amandes débordent de deux autres bols de 
+                la période Ming. D'élégants bonbons, dont des écorces de cannelle confites et des amandes 
+                confites colorées en jaune, rose et vert, remplissent un tazza en céramique. La pâte de 
+                coing, qui était conservée dans de simples boîtes en bois, était une autre friandise 
+                appréciée lors de festivités spéciales. Les élégants verres de style vénitien fabriqués par
+                des artisans flamands contiennent du vin rouge et du vin blanc, si appropriés à cette fête.
+            </p>
+                <p>
+                    Beert a minimisé la superposition de ces objets exquis en composant sa scène à partir 
+                    d'un point d'observation élevé, préservant ainsi le caractère individuel de ses éléments 
+                    de composition. Il avait une grande sensibilité à la couleur, utilisant des tons chauds 
+                    pour les succulentes bouchées et le vin qu'il situait derrière les bleus et gris froids 
+                    des huîtres et des bonbons. Sa gamme de blancs varie des tons crayeux et discrets des 
+                    bonbons exotiques aux reflets scintillants des huîtres. Le talent artistique de Beert 
+                    se manifeste également dans le rendu sensible des reflets des huîtres dans l'assiette 
+                    en étain et dans le modelage délicat de la carafe à vin "façon de Venise", dont la forme reflète la lumière de la fenêtre de son studio.
+                </p>
+                    <p>
+                        La maîtrise de l'illusionnisme et les compositions soigneusement agencées sont 
+                        les marques distinctives du style de Beert. Il revisite fréquemment ce format, 
+                        modifiant subtilement les types d'aliments et leur disposition sur la table. 
+                        Ces somptueuses natures mortes sont des déclarations visuelles joyeuses, 
+                        grandioses et fières de la richesse matérielle et du confort de vie de 
+                        l'élite flamande.
+                    </p>
+                    <footer>
+                        <div class="logo__texte_ms">
+                            <img class="logo_ms" src="../public/img/baroque-expo.webp" alt="Logo du site">
+                            <h3 class="h3footer" class="created_by_footer"></h3>
+                        </div>
+                        <p class="pfooter">Mention légale</p>   
+                        <p class="pfooter">Contact</p> 
+                        <p class="pfooter">Fondation Cartier, 261 Bd Raspail, 75014 Paris</p>    
+                        <h4 class="h4footer">Suivre l'exposition</h4>
+                        <div class="icon">
+                            <div class="icon_facebook"><a href="https://www.facebook.com/FondationCartier/?locale=fr_FR"><img class="face2" src="../public/icon/facebook2.svg" alt="logo facebook"></a></div>
+                            <div class="icon_twitter"><a href="https://twitter.com/Fond_Cartier?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor"><img class="twi2" src="../public/icon/twitter2.svg" alt="logo twitter"></a></div> 
+                            <div class="icon_instagram"><a href="https://www.instagram.com/fondationcartier/?hl=fr"><img class="insta2" src="../public/icon/instagram2.svg" alt="logo instagram"></a></div>     
+                            <div class="icon_youtube"><a href="https://www.youtube.com/user/fondationcartier"><img class="you2" src="../public/icon/youtube2.svg" alt="logo youtube"></a></div>     
+                        </div>               
+                            <p class="pfooter">Ce projet a été réaliser dans le cadre d'un exercice pédagogique au 
+                            <a href="http://mmimontbeliard.com/" style="color: #444444" class="footer_link" target="_blank">département MMI de Montbéliard</a></p>
+                            <p class="pfooter">Université Nord Franche-Comté</p>
+                            <p class="pfooter"><a href="http://mmimontbeliard.com/" style="color: #444444" class="footer_link" class="pfooter" target="_blank">IUT MMI Montbéliard</a></p>
+                    </footer>
+
+
+</body>
+</html>

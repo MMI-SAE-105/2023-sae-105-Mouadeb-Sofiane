@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en" x-data="{ menuIsOpen:false }"></html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pierre De Cortone</title>
+    <link rel="stylesheet" href="../src/styles.css">
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <script defer src="https://unpkg.com/alpinejs%22%3E"></script>
+    <style>
+        .menu {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background-color: #767676;
+            display: grid;
+            place-content: center;
+            z-index: 2;
+        }
+        .header_menuBtn {
+            position: relative;
+            z-index: 10;
+        }
+          .noscroll,
+          .noscroll body {
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="../index.html">
+            <img class="logo_principal" src="../public/img/baroque-expo.webp" alt="Logo du Site Internet">
+        </a>
+        <button class="header_menu btndumenu" @click="menuIsOpen = ! menuIsOpen">
+            <img aria-controls="mainNav" src="../public/icon/menu.svg" alt="Icone de menu">
+        </button>
+        <nav id="mainNav" x-show="menuIsOpen" x-transition.duration.800ms class="menu">
+    
+            <button class="icon_cross_menu imgcross" @click="menuIsOpen = ! menuIsOpen">
+                <img class="icon_cross_menu" src="../public/icon/x.svg" alt="Icone croix pour quitter le menu">
+            </button>
+            <ul class="liste_li">
+                <li><a href="../fr/exposition.html" style="color: #FFFFFF" class="textmenu"><h1>Exposition</h1></a></li>
+                <hr>
+                <li><a href="../fr/mouvement_artistique.html" style="color: #FFFFFF" class="textmenu"><h1 class="textmenu">Mouvement artistique</h1></a></li>
+                <hr>                  
+                    <section x-data="{open:false}">
+                        <li><a style="color: #FFFFFF" @click="open = !open" class="textmenu"><h1>Artistes</h1></a></li>
+                        <hr>                      
+                            <h2 x-show="open" x-transition.duration.700ms>                      
+                                <a href="billeterie.html" class="text_accordeon">                        
+                                    <li><a href="../fr/PierreDeCortone.html" style="color: #FFFFFF" class="textmenu1"><p class="textmenu1">Pierre De Cortone</p></a></li>
+                                    <li><a href="../fr/Osias_Beert.html" style="color: #FFFFFF" class="textmenu1"><p class="textmenu1">Osias Beert</p></a></li>
+                                    <li><a href="../fr/agostino_tassi.html" style="color: #FFFFFF" class="textmenu1"><p class="textmenu1">Agostino Tassi</p></a></li>
+                                    <li><a href="../fr/PaulBril.html" style="color: #FFFFFF" class="textmenu1"><p class="textmenu1">Paul Bril</p></a></li>                    
+                                </a>     
+                            </h2>
+                    </section>
+            </ul>
+            <ul class="liste_liii">
+                <li><a href="../fr/contact.html" style="color: #FFFFFF"  class="textmenu"><h1>Contact</h1></a></li>
+                <hr>
+                <li><a href="../en/PierreDeCortonegb.html"><img src="./public/icon/royaume-uni.svg" alt="icone pour aller en anglais" class="icon-gb"></a></li>
+            </ul> 
+        </nav>         
+    </header>
+</head>
+<body>
+    <h1 class="h1rt">Pierre De Cortone</h1>
+    <hr>
+    <p>
+        Pierre de Cortone (en italien : Pietro da Cortona, de son vrai nom Pietro Berrettini), 
+        né à Cortona le 1er novembre 1596 et mort à Rome le 16 mai 1669.
+    </p>
+    <h2>Les 2 œuvres présentes à l'exposition</h2>
+    <div class="carrousel-a">      
+        <div class="carrousel" x-data="{hrefCourant:'#ecran-1',}">
+            <button @click="const p =$refs.parent ;  p.scrollLeft-= p.clientWidth" class="carrousel_btn carrousel_btn-avant" aria-label="slide précedant"><img src="/public/icon/arrow-left(1).svg" alt="flèche gauche"></button><button @click="const p =$refs.parent ;  p.scrollLeft+= p.clientWidth" class="carrousel_btn carrousel_btn-apres" aria-label="slide suivant"><img src="/public/icon/arrow-right(1).svg" alt="flèche droite"></button>
+            <div class="carrousel_parent-ecrans" x-ref="parent" @scroll.debounce.250ms.passive="hrefCourant = '#'+
+                            [...$refs.parent.children]
+                            .find(e=>e.getBoundingClientRect().x>=0)
+                            .id">
+                <div id="ecran-1" class="carrousel_ecran">
+                    <figure>
+                        <a href="/fr/TitlepageoftheFlora,1638PierreDeCortone.html"><img src="/public/img/TitlepageoftheFlora,1638PierreDeCortone_.webp" alt="image ecran 1"></a>
+                        <figcaption><a class="pfig" href="/fr/TitlepageoftheFlora,1638PierreDeCortone.html">Title page of the Flora, 1638, Pierre De Cortone</figcaption></a>
+                    </figure>
+                </div>
+                <div id="ecran-2" class="carrousel_ecran">
+                    <figure>
+                        <a href="/fr/Studyoftheageofsilver,1637PierreDeCortone.html"><img src="/public/img/Studyoftheageofsilver,1637PierreDeCortone_.webp" alt="image ecran 2"></a>
+                        <figcaption><a class="pfig" href="/fr/Studyoftheageofsilver,1637PierreDeCortone.html">Study of the Age of Silver, 1637, Pierre De Cortone</a></figcaption>
+                    </figure>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <h2>Son histoire</h2>
+        <p>
+            Pierre de Cortone étudia avec le florentin Andrea Commodi qui l'emmena avec lui 
+            à Rome à l'âge de quinze ans. Son maître le confia en 1614 à un de ses élèves de
+            le peintre toscan Baccio Ciarpi (it) qui lui fait découvrir les œuvres de Raphaël 
+            de Rubens du Dominiquin et d'Annibale Carracci. Il s'imprègne aussi de la ferveur 
+            religieuse de l'époque marquée par la Contre-Réforme.
+            Il noua aussi très tôt des relations avec les milieux romains passionnés d'antiquités,
+            notamment Cassiano dal Pozzo qui le pousse à étudier l'art antique, et l'amateur 
+            Marcello Sacchetti pour qui il peignit à plusieurs reprises dans les années 1620 : 
+            Le Sacrifice de Polyxène, Le Triomphe de Bacchus, L'Enlèvement des Sabines 
+            (Rome, musées du Capitole). Ces œuvres témoignent aussi de son étude de la peinture vénitienne du xvie siècle.
+        </p>
+        <p>
+            En 1628, il dirige Andrea Camassei (1602-1649) et Andrea Sacchi (1599-1661) pour la 
+            décoration de la galerie de sa propriété dite Tumoleto de Fassano, que le cardinal 
+            Giulio Cesare Sacchetti (1586-1663) a achetée en 1620 au florentin Vincenzo Mazzinghi, 
+            à Castel Fusano.
+            Il poursuit sa carrière au service de la famille Sacchetti qui lui confie en 1623 
+            e chantier de la villa du Pigneto (en). Au palais Sacchetti, il rencontre le Cavalier 
+            Marin et le cardinal Mafeo Barberini, futur Urbain VIII, qui devient son protecteur. 
+            Par son intermédiaire, il obtient sa première grande commande de peinture, le cycle de 
+            décors à fresque de l'église Santa Bibiana à Rome (1624-1626), dont la façade a été 
+            réalisé par Le Bernin. Le succès qu'il rencontre lui ouvre une carrière active : en 
+            1629, il peint L'Enlèvement des Sabines qui devient le manifeste de la peinture baroque romaine.
+        </p>
+        <p>
+            En 1633-1639, il exécute pour le pape Urbain VIII sa fresque la plus célèbre : 
+            La Gloire des Barberini, qui orne le plafond du grand salon du palais Barberini à Rome. 
+            Ce décor peint est aussi appelé Le Triomphe de la Divine Providence. Il s'agit d'une 
+            allégorie de la Providence et du pouvoir divin des Barberini. Cette grande fresque 
+            est mouvementée, abonde de personnages vus dans une 
+            contre-plongée extrême (sotto in su), qui caractérise ses effets illusionnistes.
+        </p>
+        <p>
+            En 1637, durant un voyage en Italie du nord, il s'arrête à Florence et à la demande de 
+            Ferdinand II, commence à peindre une petite pièce du piano nobile appelée Sala della Stufa 
+            ou salle du Poêle au palais Pitti. Sa série de fresques décrivant les quatre âges de l'homme 
+            reçut un accueil très favorable. L'Âge de l'or et L'Âge de l'argent furent peints en 1637, 
+            puis il retourna à Rome pour achever la voûte Barberini et en 1640 il était à nouveau à 
+            Florence pour terminer l'œuvre commencée trois ans avant et peignit L'Âge du bronze et 
+            L'Âge du fer. On lui demanda alors les fresques des salles de réception du grand-duc, 
+            enfilade de cinq pièces sur le devant du palais. Dans ces cinq salles « des Planètes », 
+            la suite hiérarchique des divinités est fondée sur la cosmologie ptolémaïque : Vénus, 
+            Apollon, Mars, Jupiter (la salle du trône des Médicis), et Saturne. De 1641 à 1647 il 
+            peignit les salles de Vénus, Jupiter et Mars. Ces plafonds rendent essentiellement hommage 
+            à la lignée des Médicis et à leur capacité à être des dirigeants vertueux4. Il commença 
+            celle d'Apollon qui fut terminée par son élève Ciro Ferri en 16602. Le thème des plafonds 
+            de ces salles devaient inspirer plus tard la 
+            décoration des Grands Appartements du château de Versailles, conçus par Charles Le Brun.
+        </p>
+        <p>
+            Rentré définitivement à Rome en 1647, il reçut sans cesse de nouvelles commandes des grandes familles et des ordres religieux, soit comme architecte soit comme décorateur et peintre. Il contribua à modifier le visage 
+            de Rome, et il y deviendra principe (prince) de l'Accademia di San Luca.
+            Parmi ses élèves issus de son important atelier, Giacinto Gimignani (de Pistoie) et Giovanni 
+            Francesco Romanelli (de Viterbe) furent également sensibles au courant classique qui circule à Rome à l'époque, simultanément au baroque. D'autres au contraire, tel que Ciro Ferri contribuèrent à divulguer son langage pictural.
+        </p>
+        <footer>
+            <div class="logo__texte_ms">
+                <img class="logo_ms" src="../public/img/baroque-expo.webp" alt="Logo du site">
+                <h3 class="h3footer" class="created_by_footer"></h3>
+            </div>
+            <p class="pfooter">Mention légale</p>   
+            <p class="pfooter">Contact</p> 
+            <p class="pfooter">Fondation Cartier, 261 Bd Raspail, 75014 Paris</p>    
+            <h4 class="h4footer">Suivre l'exposition</h4>
+            <div class="icon">
+                <div class="icon_facebook"><a href="https://www.facebook.com/FondationCartier/?locale=fr_FR"><img class="face2" src="../public/icon/facebook2.svg" alt="logo facebook"></a></div>
+                <div class="icon_twitter"><a href="https://twitter.com/Fond_Cartier?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor"><img class="twi2" src="../public/icon/twitter2.svg" alt="logo twitter"></a></div> 
+                <div class="icon_instagram"><a href="https://www.instagram.com/fondationcartier/?hl=fr"><img class="insta2" src="../public/icon/instagram2.svg" alt="logo instagram"></a></div>     
+                <div class="icon_youtube"><a href="https://www.youtube.com/user/fondationcartier"><img class="you2" src="../public/icon/youtube2.svg" alt="logo youtube"></a></div>     
+            </div>               
+                <p class="pfooter">Ce projet a été réaliser dans le cadre d'un exercice pédagogique au 
+                <a href="http://mmimontbeliard.com/" style="color: #444444" class="footer_link" target="_blank">département MMI de Montbéliard</a></p>
+                <p class="pfooter">Université Nord Franche-Comté</p>
+                <p class="pfooter"><a href="http://mmimontbeliard.com/" style="color: #444444" class="footer_link" class="pfooter" target="_blank">IUT MMI Montbéliard</a></p>
+        </footer>
+
+</body>
+</html>

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en" x-data="{ menuIsOpen:false }"></html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Competition on the Capitoline Hill</title>
+    <link rel="stylesheet" href="../src/styles.css">
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <script defer src="https://unpkg.com/alpinejs%22%3E"></script>
+    <style>
+        .menu {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background-color: #767676;
+            display: grid;
+            place-content: center;
+            z-index: 2;
+        }
+        .header_menuBtn {
+            position: relative;
+            z-index: 10;
+        }
+          .noscroll,
+          .noscroll body {
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="../index.html">
+            <img class="logo_principal" src="../public/img/baroque-expo.webp" alt="Logo du Site Internet">
+        </a>
+        <button class="header_menu btndumenu" @click="menuIsOpen = ! menuIsOpen">
+            <img aria-controls="mainNav" src="../public/icon/menu.svg" alt="Icone de menu">
+        </button>
+        <nav id="mainNav" x-show="menuIsOpen" x-transition.duration.800ms class="menu">
+    
+            <button class="icon_cross_menu imgcross" @click="menuIsOpen = ! menuIsOpen">
+                <img class="icon_cross_menu" src="../public/icon/x.svg" alt="Icone croix pour quitter le menu">
+            </button>
+            <ul class="liste_li">
+                <li><a href="../fr/exposition.html" style="color: #FFFFFF" class="textmenu"><h1>Exposition</h1></a></li>
+                <hr>
+                <li><a href="../fr/mouvement_artistique.html" style="color: #FFFFFF" class="textmenu"><h1 class="textmenu">Mouvement artistique</h1></a></li>
+                <hr>                  
+                    <section x-data="{open:false}">
+                        <li><a style="color: #FFFFFF" @click="open = !open" class="textmenu"><h1>Artistes</h1></a></li>
+                        <hr>                      
+                            <h2 x-show="open" x-transition.duration.700ms>                      
+                                <a href="billeterie.html" class="text_accordeon">                        
+                                    <li><a href="../fr/PierreDeCortone.html" style="color: #FFFFFF" class="textmenu1"><p class="textmenu1">Pierre De Cortone</p></a></li>
+                                    <li><a href="../fr/Osias_Beert.html" style="color: #FFFFFF" class="textmenu1"><p class="textmenu1">Osias Beert</p></a></li>
+                                    <li><a href="../fr/agostino_tassi.html" style="color: #FFFFFF" class="textmenu1"><p class="textmenu1">Agostino Tassi</p></a></li>
+                                    <li><a href="../fr/PaulBril.html" style="color: #FFFFFF" class="textmenu1"><p class="textmenu1">Paul Bril</p></a></li>                    
+                                </a>     
+                            </h2>
+                    </section>
+            </ul>
+            <ul class="liste_liii">
+                <li><a href="../fr/contact.html" style="color: #FFFFFF"  class="textmenu"><h1>Contact</h1></a></li>
+                <hr>
+                <li><a href="../en/CompetitionontheCapitolineHillgb.html"><img src="./public/icon/royaume-uni.svg" alt="icone pour aller en anglais" class="icon-gb"></a></li>
+            </ul> 
+        </nav>         
+    </header>
+</head>
+<body>
+    <h1 class="h1comp">Competition on the Capitoline Hill</h1>
+    <hr>
+    <img src="/public/img/CompetitionontheCapitolineHill,1630sAgostinoTassi.webp" alt="Competition on the Capitoline Hill">
+    <p>Competition on the Capitoline Hill, 1630s, Agostino Tassi</p>
+    <p>c. 1615</p>
+    <p>Oil on canvas,</p>
+    <p>Pinacoteca Capitolina, Rome</p>
+
+    <h2>Les informations sur l' œuvre</h2>
+        <p>
+            Agostino Tassi a dérivé certaines de ses images de la 
+            côte maritime de Bril, mais d'autres, représentant des bâtiments 
+            réels ou imaginaires près de l'eau, étaient basées sur Jan Brueghel l'Ancien. 
+            L'œuvre de Tassi a été une source fondamentale pour nombre des scènes 
+            portuaires les plus célèbres de Claude, ainsi que pour toute la tradition 
+            des capricci. Ses vues côtières de palais et de loggias avaient des 
+            sujets tirés de sources variées, mais son thème préféré était l'embarquement 
+            d'une reine. Dans certains cas, mais pas dans ce tableau, elle peut être 
+            clairement identifiée comme la reine de Saba. Les Barberini possédèrent 
+            par la suite deux tableaux beaucoup plus grands (2,5 x 1,8 m) de Tassi 
+            représentant des palais situés près de l'eau, l'un illustrant l'événement
+            contemporain du départ de la reine de Hongrie d'Ancône et l'autre représentant 
+            simplement des pêcheurs sur la rive d'un fleuve.
+        </p>
+            <p>
+                Les dimensions similaires de L'Embarquement d'une reine et des Pêcheurs de corail 
+                pourraient laisser penser que les deux tableaux ont été conçus comme des pendentifs, 
+                mais comme ils ont été exécutés à près de dix ans d'intervalle, ce n'est manifestement 
+                pas le cas. Cependant, les peintures d'architecture étaient souvent associées à des 
+                paysages. Un certain nombre de sources du XVIIe siècle indiquent que les collectionneurs 
+                aimaient accrocher des prospettive (peintures axées sur l'architecture) entre deux paesi 
+                (paysages). L'Embarquement d'une reine a été daté des environs de 1622, mais sa lumière 
+                froide et vive suggère qu'il a été exécuté au plus tard en 1615-16. La grande loggia au 
+                milieu du tableau rappelle l'architecture toscane, tandis que la précision employée pour 
+                rendre les assiettes et les vases sur les marches provient de l'intérêt que Tassi a porté 
+                toute sa vie à l'art flamand. Les petites figures sont typiques de Tassi et reviennent tout au long de sa carrière.
+            </p>
+            <footer>
+                <div class="logo__texte_ms">
+                    <img class="logo_ms" src="../public/img/baroque-expo.webp" alt="Logo du site">
+                    <h3 class="h3footer" class="created_by_footer"></h3>
+                </div>
+                <p class="pfooter">Mention légale</p>   
+                <p class="pfooter">Contact</p> 
+                <p class="pfooter">Fondation Cartier, 261 Bd Raspail, 75014 Paris</p>    
+                <h4 class="h4footer">Suivre l'exposition</h4>
+                <div class="icon">
+                    <div class="icon_facebook"><a href="https://www.facebook.com/FondationCartier/?locale=fr_FR"><img class="face2" src="../public/icon/facebook2.svg" alt="logo facebook"></a></div>
+                    <div class="icon_twitter"><a href="https://twitter.com/Fond_Cartier?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor"><img class="twi2" src="../public/icon/twitter2.svg" alt="logo twitter"></a></div> 
+                    <div class="icon_instagram"><a href="https://www.instagram.com/fondationcartier/?hl=fr"><img class="insta2" src="../public/icon/instagram2.svg" alt="logo instagram"></a></div>     
+                    <div class="icon_youtube"><a href="https://www.youtube.com/user/fondationcartier"><img class="you2" src="../public/icon/youtube2.svg" alt="logo youtube"></a></div>     
+                </div>               
+                    <p class="pfooter">Ce projet a été réaliser dans le cadre d'un exercice pédagogique au 
+                    <a href="http://mmimontbeliard.com/" style="color: #444444" class="footer_link" target="_blank">département MMI de Montbéliard</a></p>
+                    <p class="pfooter">Université Nord Franche-Comté</p>
+                    <p class="pfooter"><a href="http://mmimontbeliard.com/" style="color: #444444" class="footer_link" class="pfooter" target="_blank">IUT MMI Montbéliard</a></p>
+            </footer>
+</body>
+</html>

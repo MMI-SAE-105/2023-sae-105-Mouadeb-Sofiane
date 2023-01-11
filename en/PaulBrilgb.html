@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en" x-data="{ menuIsOpen:false }"></html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paul Bril</title>
+    <link rel="stylesheet" href="../src/styles.css">
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <script defer src="https://unpkg.com/alpinejs%22%3E"></script>
+    <style>
+        .menu {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background-color: #767676;
+            display: grid;
+            place-content: center;
+            z-index: 2;
+        }
+        .header_menuBtn {
+            position: relative;
+            z-index: 10;
+        }
+          .noscroll,
+          .noscroll body {
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="../index.html">
+            <img class="logo_principal" src="../public/img/baroque-expo.webp" alt="Logo du Site Internet">
+        </a>
+        <button class="header_menu btndumenu" @click="menuIsOpen = ! menuIsOpen">
+            <img aria-controls="mainNav" src="../public/icon/menu.svg" alt="Icone de menu">
+        </button>
+        <nav id="mainNav" x-show="menuIsOpen" x-transition.duration.800ms class="menu">
+    
+            <button class="icon_cross_menu imgcross" @click="menuIsOpen = ! menuIsOpen">
+                <img class="icon_cross_menu" src="../public/icon/x.svg" alt="Icone croix pour quitter le menu">
+            </button>
+            <ul class="liste_li">
+                <li><a href="../fr/exposition.html" style="color: #FFFFFF" class="textmenu"><h1>Exposition</h1></a></li>
+                <hr>
+                <li><a href="../fr/mouvement_artistique.html" style="color: #FFFFFF" class="textmenu"><h1 class="textmenu">Mouvement artistique</h1></a></li>
+                <hr>                  
+                    <section x-data="{open:false}">
+                        <li><a style="color: #FFFFFF" @click="open = !open" class="textmenu"><h1>Artistes</h1></a></li>
+                        <hr>                      
+                            <h2 x-show="open" x-transition.duration.700ms>                      
+                                <a href="billeterie.html" class="text_accordeon">                        
+                                    <li><a href="../fr/PierreDeCortone.html" style="color: #FFFFFF" class="textmenu1"><p class="textmenu1">Pierre De Cortone</p></a></li>
+                                    <li><a href="../fr/Osias_Beert.html" style="color: #FFFFFF" class="textmenu1"><p class="textmenu1">Osias Beert</p></a></li>
+                                    <li><a href="../fr/agostino_tassi.html" style="color: #FFFFFF" class="textmenu1"><p class="textmenu1">Agostino Tassi</p></a></li>
+                                    <li><a href="../fr/PaulBril.html" style="color: #FFFFFF" class="textmenu1"><p class="textmenu1">Paul Bril</p></a></li>                    
+                                </a>     
+                            </h2>
+                    </section>
+            </ul>
+            <ul class="liste_liii">
+                <li><a href="../fr/contact.html" style="color: #FFFFFF"  class="textmenu"><h1>Contact</h1></a></li>
+                <hr>
+                <li><a href="../en/PaulBrilgb.html"><img src="./public/icon/royaume-uni.svg" alt="icone pour aller en anglais" class="icon-gb"></a></li>
+            </ul> 
+        </nav>         
+    </header>
+</head>
+<body>
+    <h1 class="h1pb">Paul Bril</h1>
+    <hr>
+    <p>
+        Paul Bril, né à Anvers en 1553 ou 1554 et meurt à Rome en 1626.
+    </p>
+    <h2>Les 2 œuvres présentes à l'exposition</h2>
+    <div class="carrousel-a">      
+        <div class="carrousel" x-data="{hrefCourant:'#ecran-1',}">
+            <button @click="const p =$refs.parent ;  p.scrollLeft-= p.clientWidth" class="carrousel_btn carrousel_btn-avant" aria-label="slide précedant"><img src="/public/icon/arrow-left(1).svg" alt="flèche gauche"></button><button @click="const p =$refs.parent ;  p.scrollLeft+= p.clientWidth" class="carrousel_btn carrousel_btn-apres" aria-label="slide suivant"><img src="/public/icon/arrow-right(1).svg" alt="flèche droite"></button>
+            <div class="carrousel_parent-ecrans" x-ref="parent" @scroll.debounce.250ms.passive="hrefCourant = '#'+
+                            [...$refs.parent.children]
+                            .find(e=>e.getBoundingClientRect().x>=0)
+                            .id">
+                <div id="ecran-1" class="carrousel_ecran">
+                    <figure>
+                        <a href="/fr/ViewofBracciano,1620PaulBril.html"><img src="/public/img/ViewofBracciano,1620PaulBril_.webp" alt="image ecran 1"></a>
+                        <figcaption><a class="pfig" href="/fr/ViewofBracciano,1620PaulBril.html">View of Bracciano, 1620, Paul Bril</figcaption></a>
+                    </figure>
+                </div>
+                <div id="ecran-2" class="carrousel_ecran">
+                    <figure>
+                        <a href="/fr/LandscapewithaMarsh,1595PaulBril.html"><img src="/public/img/LandscapewithaMarsh,1595PaulBril_.webp" alt="image ecran 2"></a>
+                        <figcaption><a class="pfig" href="/fr/LandscapewithaMarsh,1595PaulBril.html">Landscape with a Marsh, 1595, Paul Bril</a></figcaption>
+                    </figure>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <h2>Son histoire</h2>
+        <p>
+            Paul Bril, né à Anvers (Flandres, aujourd'hui en Belgique) ou Bréda 
+            (Brabant septentrional, aujourd'hui aux Pays-Bas), en 1553 ou 1554, 
+            dans les Pays-Bas espagnols dont il était sujet, et mort à Rome en 1626, 
+            est un peintre et graveur flamand de l'école d'Anvers. 
+            Il fut actif à Rome de 1582 à sa mort comme paysagiste de vedute après 1600.
+        </p>
+        <p>
+            Paul Bril reçoit d'abord une formation artistique de son père, le peintre Matthijs 
+            Bril le Vieux. Ensuite il poursuit son apprentissage auprès de Damiaen Wortelmans.
+            Aux environs de 1575, il entame un voyage à l'étranger. Après avoir passé quelque 
+            temps à Lyon, il continue sa route et arrive à Rome en 1582 où il travaille d'abord 
+            dans l'atelier de son frère aîné, Matthijs Bril le Jeune (1550-1583) qui décore à 
+            fresque le palais du Vatican. Il semble qu'à cette époque il se soit perfectionné 
+            dans son art, et il s'intègre fortement dans la ville italienne.
+        </p>
+        <p>
+            Après la mort prématurée de son frère, qui avait été pour lui également un maître 
+            et qu'il ne tarda pas à surpasser, il achève pour le pape les ouvrages que son aîné
+            n'avait pu terminer. Il participe aux fresques de la Scala Santa en 1588, à celles 
+            du Palais Farnèse à Caprarola, aux côtés d'Antonio Tempesta et travaille dans 
+            d'importantes églises de la cité pontificale. Après 1590, il commence à se consacrer 
+            à la peinture de chevalet et à la technique de l'huile sur cuivre. En 1592, il se 
+            marie. Tout comme son frère, il reçoit par la suite des commandes des papes Grégoire 
+            XIII, Sixte V — qui l'emploie à décorer ses palais et plusieurs couvents 
+            d'Italie — Clément VIII et Paul V. Entre 1599 et 1600, il peint des paysages à 
+            fresque pour le cardinal Sfondrati au couvent Sainte-Cécile au Trastevere et en 
+            1602 il réalise les décorations de la salle Clémentine au Vatican.
+        </p>
+        <p>
+            Durant ses années de maturité, il eut d'autres commandes importantes : les lunettes des 
+            Quatre Saisons au Palais Ruspigliosi Pallavicini en 1613-1614, et celles de la salle des 
+            Pays au Casino Ludovici en 1621 en collaboration avec le Dominiquin, le Guerchin et Viola.
+        </p>
+        <p>
+            Il est membre du groupe d'artistes Virtuosi al Pantheon, et en 1620, il fut élu Principe de l’Accademia di San Luca et Secondo Consigliere en 1623. Ces titres étaient attribués pour la première fois à un paysagiste et à un étranger3.
+            Il eut comme collaborateurs Agostino Tassi et le Gobbo dei Carracci4.
+            Il restera à Rome jusqu'à sa mort, survenue vers octobre 1626.
+        </p>
+        <footer>
+            <div class="logo__texte_ms">
+                <img class="logo_ms" src="../public/img/baroque-expo.webp" alt="Logo du site">
+                <h3 class="h3footer" class="created_by_footer"></h3>
+            </div>
+            <p class="pfooter">Mention légale</p>   
+            <p class="pfooter">Contact</p> 
+            <p class="pfooter">Fondation Cartier, 261 Bd Raspail, 75014 Paris</p>    
+            <h4 class="h4footer">Suivre l'exposition</h4>
+            <div class="icon">
+                <div class="icon_facebook"><a href="https://www.facebook.com/FondationCartier/?locale=fr_FR"><img class="face2" src="../public/icon/facebook2.svg" alt="logo facebook"></a></div>
+                <div class="icon_twitter"><a href="https://twitter.com/Fond_Cartier?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor"><img class="twi2" src="../public/icon/twitter2.svg" alt="logo twitter"></a></div> 
+                <div class="icon_instagram"><a href="https://www.instagram.com/fondationcartier/?hl=fr"><img class="insta2" src="../public/icon/instagram2.svg" alt="logo instagram"></a></div>     
+                <div class="icon_youtube"><a href="https://www.youtube.com/user/fondationcartier"><img class="you2" src="../public/icon/youtube2.svg" alt="logo youtube"></a></div>     
+            </div>               
+                <p class="pfooter">Ce projet a été réaliser dans le cadre d'un exercice pédagogique au 
+                <a href="http://mmimontbeliard.com/" style="color: #444444" class="footer_link" target="_blank">département MMI de Montbéliard</a></p>
+                <p class="pfooter">Université Nord Franche-Comté</p>
+                <p class="pfooter"><a href="http://mmimontbeliard.com/" style="color: #444444" class="footer_link" class="pfooter" target="_blank">IUT MMI Montbéliard</a></p>
+        </footer>
+
+</body>
+</html>

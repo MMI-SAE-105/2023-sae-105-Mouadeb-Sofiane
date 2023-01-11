@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en" x-data="{ menuIsOpen:false }"></html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agostino Tassi</title>
+    <link rel="stylesheet" href="../src/styles.css">
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <script defer src="https://unpkg.com/alpinejs%22%3E"></script>
+    <style>
+        .menu {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background-color: #767676;
+            display: grid;
+            place-content: center;
+            z-index: 2;
+        }
+        .header_menuBtn {
+            position: relative;
+            z-index: 10;
+        }
+          .noscroll,
+          .noscroll body {
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="../index.html">
+            <img class="logo_principal" src="../public/img/baroque-expo.webp" alt="Logo du Site Internet">
+        </a>
+        <button class="header_menu btndumenu" @click="menuIsOpen = ! menuIsOpen">
+            <img aria-controls="mainNav" src="../public/icon/menu.svg" alt="Icone de menu">
+        </button>
+        <nav id="mainNav" x-show="menuIsOpen" x-transition.duration.800ms class="menu">
+    
+            <button class="icon_cross_menu imgcross" @click="menuIsOpen = ! menuIsOpen">
+                <img class="icon_cross_menu" src="../public/icon/x.svg" alt="Icone croix pour quitter le menu">
+            </button>
+            <ul class="liste_li">
+                <li><a href="../fr/exposition.html" style="color: #FFFFFF" class="textmenu"><h1>Exposition</h1></a></li>
+                <hr>
+                <li><a href="../fr/mouvement_artistique.html" style="color: #FFFFFF" class="textmenu"><h1 class="textmenu">Mouvement artistique</h1></a></li>
+                <hr>                  
+                    <section x-data="{open:false}">
+                        <li><a style="color: #FFFFFF" @click="open = !open" class="textmenu"><h1>Artistes</h1></a></li>
+                        <hr>                      
+                            <h2 x-show="open" x-transition.duration.700ms>                      
+                                <a href="billeterie.html" class="text_accordeon">                        
+                                    <li><a href="../fr/PierreDeCortone.html" style="color: #FFFFFF" class="textmenu1"><p class="textmenu1">Pierre De Cortone</p></a></li>
+                                    <li><a href="../fr/Osias_Beert.html" style="color: #FFFFFF" class="textmenu1"><p class="textmenu1">Osias Beert</p></a></li>
+                                    <li><a href="../fr/agostino_tassi.html" style="color: #FFFFFF" class="textmenu1"><p class="textmenu1">Agostino Tassi</p></a></li>
+                                    <li><a href="../fr/PaulBril.html" style="color: #FFFFFF" class="textmenu1"><p class="textmenu1">Paul Bril</p></a></li>                    
+                                </a>     
+                            </h2>
+                    </section>
+            </ul>
+            <ul class="liste_liii">
+                <li><a href="../fr/contact.html" style="color: #FFFFFF"  class="textmenu"><h1>Contact</h1></a></li>
+                <hr>
+                <li><a href="../en/agostinotassi.html"><img src="./public/icon/royaume-uni.svg" alt="icone pour aller en anglais" class="icon-gb"></a></li>
+            </ul> 
+        </nav>         
+    </header>
+</head>
+<body>
+    <h1 class="h1ago">Agostino Tassi</h1>
+    <hr>
+    <p>
+        Agostino Tassi ,peintre italien
+        (Ponzano Romano v. 1580 - Rome 1644).
+    </p>
+    <h2>Les 2 œuvres présentes à l'exposition</h2>
+    <div class="carrousel-a">      
+        <div class="carrousel" x-data="{hrefCourant:'#ecran-1',}">
+            <button @click="const p =$refs.parent ;  p.scrollLeft-= p.clientWidth" class="carrousel_btn carrousel_btn-avant" aria-label="slide précedant"><img src="/public/icon/arrow-left(1).svg" alt="flèche gauche"></button><button @click="const p =$refs.parent ;  p.scrollLeft+= p.clientWidth" class="carrousel_btn carrousel_btn-apres" aria-label="slide suivant"><img src="/public/icon/arrow-right(1).svg" alt="flèche droite"></button>
+            <div class="carrousel_parent-ecrans" x-ref="parent" @scroll.debounce.250ms.passive="hrefCourant = '#'+
+                            [...$refs.parent.children]
+                            .find(e=>e.getBoundingClientRect().x>=0)
+                            .id">
+                <div id="ecran-1" class="carrousel_ecran">
+                    <figure>
+                        <a href="/fr/TheEmbarkationofaQueen.html"><img src="/public/img/TheEmbarkationofaQueen,1615sAgostinoTassi_.webp" alt="image ecran 1"></a>
+                        <figcaption><a class="pfig" href="/fr/TheEmbarkationofaQueen.html">The Embarkation of a Queen, 1615s, Agostino Tassi</figcaption></a>
+                    </figure>
+                </div>
+                <div id="ecran-2" class="carrousel_ecran">
+                    <figure>
+                        <a href="/fr/CompetitionontheCapitolineHill.html"><img src="/public/img/CompetitionontheCapitolineHill,1630sAgostinoTassi_.webp" alt="image ecran 2"></a>
+                        <figcaption><a class="pfig" href="/fr/CompetitionontheCapitolineHill.html">Competition on the Capitoline Hill, 1630s, Agostino Tassi</a></figcaption>
+                    </figure>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <h2>Son histoire</h2>
+        <p>
+            Vers l'âge de quinze ans, il quitta Rome pour Florence, 
+            où il gagna la faveur du grand-duc de Toscane. Mais, tout au long de sa vie, 
+            il eut affaire avec la justice et, dès cette époque, se retrouva à bord des galères 
+            du duc, expérience qu'il sut tourner à son avantage puisqu'il en tira le 
+            goût pour les marines.
+        </p>
+        <p>
+            Après avoir peint une frise au dôme de Livourne (1602), il se rendit à Gênes, où, selon 
+            l'historien génois Soprani, il peignit des paysages marins dans la maison d'Orazio de Negro. 
+            De retour à Rome v. 1610, il travailla à des fresques : au Palazzo di Firenze, sous la direction 
+            de Cigoli (1610) ; à Montecavallo ; au Casino du palais Rospigliosi en collaboration avec O. 
+            Gentileschi (1611-1612) ; à la Villa Montalto (auj. Villa Lante : Marines), 
+            à Bagnaia (1615) ; au Quirinal (1616) ; au palais Lancellotti (1617-1623) ; 
+            à la Villa Ludovisi (avec Guerchin, 1621) ; au palais Costaguti (1621-1623) ; 
+            au premier étage du palais Rospigliosi (1623) ; au Palais Doria (1635). 
+        </p>
+        <p>
+            Dans ces fresques, il adopte un style conservateur dans la tradition du maniérisme tardif de Paul Bril, 
+            qu'il dut connaître lorsqu'il travaillait au palais Rospigliosi et dont l'influence se fait pleinement 
+            sentir dans la Vie de saint Paul au Quirinal. Cependant, parallèlement, dans ses tableaux, il se montre
+            novateur, ouvert à l'esthétique d'Elsheimer, qui adapte à la peinture de genre la vision caravagesque, 
+            et aux suggestions de Saraceni.
+            Après un premier tableau encore flamingant (la Fuite en Égypte, 1615, Pérouse, G. N.), il révèle son 
+            modernisme et sa sensibilité aux effets de lumière et d'atmosphère dans 2 tableaux de Ruines (apr. 1615 ; 
+            Florence, coll. Guildi), tandis que dans la Menace de tempête à Calafuria (signé A. T., Florence, Fond. Longhi), 
+            il parvient à briser la structure glacée d'Hendrick Vroom et annonce même Bellotto.
+        </p>
+        <p>
+            Une Scène pastorale (Rome, G. N., Gal. Corsini) montre qu'il fut également touché par le classicisme bolonais 
+            (Dominiquin). Ses paysages et ses marines sont animés de joueurs de cartes, de diseuses de bonne aventure 
+            (Scène de port, Rome, Gal. Doria Pamphili), très manfrédiens et annonçant les bambochades. 
+        </p>
+        <p>
+            Pour avoir su italianiser complètement la vision d'Elsheimer, Tassi occupe une place déterminante dans 
+            l'histoire du paysage italien : la nouveauté de sa vision, souvent plus que la qualité picturale de ses œuvres, 
+            explique l'importance de son influence sur de petits maîtres (Sinibaldo Scorza, A. Travi) aussi bien que sur des 
+            peintres comme Pierre de Cortone et Claude Lorrain, qui entra sans doute dans son atelier en 1620. 
+            Tassi annonce les recherches de lumière et d'ombre de Codazzi, mais aussi la fraîcheur de vision de 
+            Swanevelt, de Jan Both et de Gaspard Dughet, mais surtout de Claude ; de plus, le « stile furioso » 
+            de ses tempêtes se retrouve, à travers Bramer, chez Salvator Rosa, puis chez Magnasco et Marco Ricci.
+        </p>
+        <footer>
+            <div class="logo__texte_ms">
+                <img class="logo_ms" src="../public/img/baroque-expo.webp" alt="Logo du site">
+                <h3 class="h3footer" class="created_by_footer"></h3>
+            </div>
+            <p class="pfooter">Mention légale</p>   
+            <p class="pfooter">Contact</p> 
+            <p class="pfooter">Fondation Cartier, 261 Bd Raspail, 75014 Paris</p>    
+            <h4 class="h4footer">Suivre l'exposition</h4>
+            <div class="icon">
+                <div class="icon_facebook"><a href="https://www.facebook.com/FondationCartier/?locale=fr_FR"><img class="face2" src="../public/icon/facebook2.svg" alt="logo facebook"></a></div>
+                <div class="icon_twitter"><a href="https://twitter.com/Fond_Cartier?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor"><img class="twi2" src="../public/icon/twitter2.svg" alt="logo twitter"></a></div> 
+                <div class="icon_instagram"><a href="https://www.instagram.com/fondationcartier/?hl=fr"><img class="insta2" src="../public/icon/instagram2.svg" alt="logo instagram"></a></div>     
+                <div class="icon_youtube"><a href="https://www.youtube.com/user/fondationcartier"><img class="you2" src="../public/icon/youtube2.svg" alt="logo youtube"></a></div>     
+            </div>               
+                <p class="pfooter">Ce projet a été réaliser dans le cadre d'un exercice pédagogique au 
+                <a href="http://mmimontbeliard.com/" style="color: #444444" class="footer_link" target="_blank">département MMI de Montbéliard</a></p>
+                <p class="pfooter">Université Nord Franche-Comté</p>
+                <p class="pfooter"><a href="http://mmimontbeliard.com/" style="color: #444444" class="footer_link" class="pfooter" target="_blank">IUT MMI Montbéliard</a></p>
+        </footer> 
+
+</body>
+</html>

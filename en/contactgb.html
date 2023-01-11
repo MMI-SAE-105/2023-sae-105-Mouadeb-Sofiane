@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en" x-data="{ menuIsOpen:false }"></html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <link rel="stylesheet" href="../src/styles.css">
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <script defer src="https://unpkg.com/alpinejs%22%3E"></script>
+    <style>
+        .menu {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background-color: #767676;
+            display: grid;
+            place-content: center;
+            z-index: 2;
+        }
+        .header_menuBtn {
+            position: relative;
+            z-index: 10;
+        }
+          .noscroll,
+          .noscroll body {
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="../index.html">
+            <img class="logo_principal" src="../public/img/baroque-expo.webp" alt="Logo du Site Internet">
+        </a>
+        <button class="header_menu btndumenu" @click="menuIsOpen = ! menuIsOpen">
+            <img aria-controls="mainNav" src="../public/icon/menu.svg" alt="Icone de menu">
+        </button>
+        <nav id="mainNav" x-show="menuIsOpen" x-transition.duration.800ms class="menu">
+    
+            <button class="icon_cross_menu imgcross" @click="menuIsOpen = ! menuIsOpen">
+                <img class="icon_cross_menu" src="../public/icon/x.svg" alt="Icone croix pour quitter le menu">
+            </button>
+            <ul class="liste_li">
+                <li><a href="../fr/exposition.html" style="color: #FFFFFF" class="textmenu"><h1>Exposition</h1></a></li>
+                <hr>
+                <li><a href="../fr/mouvement_artistique.html" style="color: #FFFFFF" class="textmenu"><h1 class="textmenu">Mouvement artistique</h1></a></li>
+                <hr>                  
+                    <section x-data="{open:false}">
+                        <li><a style="color: #FFFFFF" @click="open = !open" class="textmenu"><h1>Artistes</h1></a></li>
+                        <hr>                      
+                            <h2 x-show="open" x-transition.duration.700ms>                      
+                                <a href="billeterie.html" class="text_accordeon">                        
+                                    <li><a href="../fr/PierreDeCortone.html" style="color: #FFFFFF" class="textmenu1"><p class="textmenu1">Pierre De Cortone</p></a></li>
+                                    <li><a href="../fr/Osias_Beert.html" style="color: #FFFFFF" class="textmenu1"><p class="textmenu1">Osias Beert</p></a></li>
+                                    <li><a href="../fr/agostino_tassi.html" style="color: #FFFFFF" class="textmenu1"><p class="textmenu1">Agostino Tassi</p></a></li>
+                                    <li><a href="../fr/PaulBril.html" style="color: #FFFFFF" class="textmenu1"><p class="textmenu1">Paul Bril</p></a></li>                    
+                                </a>     
+                            </h2>
+                    </section>
+            </ul>
+            <ul class="liste_liii">
+                <li><a href="../fr/contact.html" style="color: #FFFFFF"  class="textmenu"><h1>Contact</h1></a></li>
+                <hr>
+                <li><a href="../en/contactgb.html"><img src="./public/icon/royaume-uni.svg" alt="icone pour aller en anglais" class="icon-gb"></a></li>
+            </ul> 
+        </nav>         
+    </header>
+</head>
+<body>
+    <h1 class="h1z">Contact</h1>
+    <hr>
+    <h3 class="h3d">Vous avez des questions ?</h3>
+    <h4 class="h4d">N'hésitez pas à nous contacter</h4>
+    <div class="container">
+        <div class="row">
+                <h3 style="text-align:center">Contacter nous !</h3>
+        </div>
+        <div class="row">
+                <h4 style="text-align:center">Si vous avez quoi que ce soit à nous faire paraître.</h4>
+                    <h4 style="text-align:center">Mettez nous tout cela ici.</h4>
+        </div>
+        <div class="row input-container">
+                <div class="col-xs-12">
+                    <p class="replacetext"></p>
+                    <div class="styled-input wide">
+                        <input type="text" placeholder="Nom" required />
+                    </div>
+                </div>
+                <br>
+                <div class="col-md-6 col-sm-12">
+                    <p class="replacetext"></p>
+                    <div class="styled-input">
+                        <input type="text" placeholder="Email" required />
+                    </div>
+                </div>
+                <br>
+                <div class="col-md-6 col-sm-12">
+                    <p class="replacetext"></p>
+                    <div class="styled-input">
+                        <input type="text" placeholder="Numéro de téléphone" required />                 
+                    </div>
+                </div>
+                <br>
+                <div class="col-xs-12">
+                    <p class="replacetext"></p>
+                    <div class="styled-input wide1">
+                        <textarea placeholder="Votre message" required></textarea>
+                    </div>
+                </div>
+                <br>
+                <div class="col-xs-12">
+                    <div class="btn-lrg submit-btn">Envoyer</div>
+                </div>
+        </div>
+    </div>
+    
+    <footer>
+        <div class="logo__texte_ms">
+            <img class="logo_ms" src="../public/img/baroque-expo.webp" alt="Logo du site">
+            <h3 class="h3footer" class="created_by_footer"></h3>
+        </div>
+        <p class="pfooter">Mention légale</p>   
+        <p class="pfooter">Contact</p> 
+        <p class="pfooter">Fondation Cartier, 261 Bd Raspail, 75014 Paris</p>    
+        <h4 class="h4footer">Suivre l'exposition</h4>
+        <div class="icon">
+            <div class="icon_facebook"><a href="https://www.facebook.com/FondationCartier/?locale=fr_FR"><img class="face2" src="../public/icon/facebook2.svg" alt="logo facebook"></a></div>
+            <div class="icon_twitter"><a href="https://twitter.com/Fond_Cartier?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor"><img class="twi2" src="../public/icon/twitter2.svg" alt="logo twitter"></a></div> 
+            <div class="icon_instagram"><a href="https://www.instagram.com/fondationcartier/?hl=fr"><img class="insta2" src="../public/icon/instagram2.svg" alt="logo instagram"></a></div>     
+            <div class="icon_youtube"><a href="https://www.youtube.com/user/fondationcartier"><img class="you2" src="../public/icon/youtube2.svg" alt="logo youtube"></a></div>     
+        </div>               
+            <p class="pfooter">Ce projet a été réaliser dans le cadre d'un exercice pédagogique au 
+            <a href="http://mmimontbeliard.com/" style="color: #444444" class="footer_link" target="_blank">département MMI de Montbéliard</a></p>
+            <p class="pfooter">Université Nord Franche-Comté</p>
+            <p class="pfooter"><a href="http://mmimontbeliard.com/" style="color: #444444" class="footer_link" class="pfooter" target="_blank">IUT MMI Montbéliard</a></p>
+    </footer>
+    
+</body>
+</html>
