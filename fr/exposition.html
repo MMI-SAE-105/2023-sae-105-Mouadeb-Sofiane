@@ -41,8 +41,65 @@
     <button>Billetterie</button>
 
     <h2>Les œuvres artistiques qui seront présentes à l'exposition</h2>
-    
-    carrousel sur toutes les oeuvres prés.enter
+
+    <div class="carrousel-a">      
+        <div class="carrousel" x-data="{hrefCourant:'#ecran-1',}">
+            <button @click="const p =$refs.parent ;  p.scrollLeft-= p.clientWidth" class="carrousel_btn carrousel_btn-avant" aria-label="slide précedant"><img src="/public/icon/arrow-left(1).svg" alt="flèche gauche"></button><button @click="const p =$refs.parent ;  p.scrollLeft+= p.clientWidth" class="carrousel_btn carrousel_btn-apres" aria-label="slide suivant"><img src="/public/icon/arrow-right(1).svg" alt="flèche droite"></button>
+            <div class="carrousel_parent-ecrans" x-ref="parent" @scroll.debounce.250ms.passive="hrefCourant = '#'+
+                            [...$refs.parent.children]
+                            .find(e=>e.getBoundingClientRect().x>=0)
+                            .id">
+                <div id="ecran-1" class="carrousel_ecran">
+                    <figure>
+                        <a href="/fr/TheEmbarkationofaQueen.html"><img src="/public/img/TheEmbarkationofaQueen,1615sAgostinoTassi.webp" alt="image ecran 1"></a>
+                        <figcaption><a class="pfig" href="/fr/TheEmbarkationofaQueen.html">The Embarkation of a Queen, 1615s, Agostino Tassi</figcaption></a>
+                    </figure>
+                </div>
+                <div id="ecran-2" class="carrousel_ecran">
+                    <figure>
+                        <a href="/fr/CompetitionontheCapitolineHill.html"><img src="/public/img/CompetitionontheCapitolineHill,1630sAgostinoTassi.webp" alt="image ecran 2"></a>
+                        <figcaption><a class="pfig" href="/fr/CompetitionontheCapitolineHill.html">Competition on the Capitoline Hill, 1630s, Agostino Tassi</a></figcaption>
+                    </figure>
+                </div>
+                <div id="ecran-3" class="carrousel_ecran">
+                    <figure>
+                        <a href="/fr/TitlepageoftheFlora,1638PierreDeCortone.html"><img src="/public/img/TitlepageoftheFlora,1638PierreDeCortone.webp" alt="image ecran 1"></a>
+                        <figcaption><a class="pfig" href="/fr/TitlepageoftheFlora,1638PierreDeCortone.html">Title page of the Flora, 1638, Pierre De Cortone</figcaption></a>
+                    </figure>
+                </div>
+                <div id="ecran-4" class="carrousel_ecran">
+                    <figure>
+                        <a href="/fr/Studyoftheageofsilver,1637PierreDeCortone.html"><img src="/public/img/Studyoftheageofsilver,1637PierreDeCortone.webp" alt="image ecran 2"></a>
+                        <figcaption><a class="pfig" href="/fr/Studyoftheageofsilver,1637PierreDeCortone.html">Study of the Age of Silver, 1637, Pierre De Cortone</a></figcaption>
+                    </figure>
+                </div>
+                <div id="ecran-5" class="carrousel_ecran">
+                    <figure>
+                        <a href="/fr/ViewofBracciano,1620PaulBril.html"><img src="/public/img/ViewofBracciano,1620PaulBril.webp" alt="image ecran 1"></a>
+                        <figcaption><a class="pfig" href="/fr/ViewofBracciano,1620PaulBril.html">View of Bracciano, 1620, Paul Bril</figcaption></a>
+                    </figure>
+                </div>
+                <div id="ecran-6" class="carrousel_ecran">
+                    <figure>
+                        <a href="/fr/LandscapewithaMarsh,1595PaulBril.html"><img src="/public/img/LandscapewithaMarsh,1595PaulBril.webp" alt="image ecran 2"></a>
+                        <figcaption><a class="pfig" href="/fr/LandscapewithaMarsh,1595PaulBril.html">Landscape with a Marsh, 1595, Paul Bril</a></figcaption>
+                    </figure>
+                </div>
+                <div id="ecran-7" class="carrousel_ecran">
+                    <figure>
+                        <a href="/fr/StillLifewithOysters,OsiasBeert.html"><img src="/public/img/StillLifewithOysters,OsiasBeert.webp" alt="image ecran 1"></a>
+                        <figcaption><a class="pfig" href="/fr/StillLifewithOysters,OsiasBeert.html">Still Life with Oysters, Osias Beert</figcaption></a>
+                    </figure>
+                </div>
+                <div id="ecran-8" class="carrousel_ecran">
+                    <figure>
+                        <a href="/fr/DisheswithOysters,Fruit,andWine,1624OsiasBeert.html"><img src="/public/img/DisheswithOysters,Fruit,andWine,1624OsiasBeert.webp" alt="image ecran 2"></a>
+                        <figcaption><a class="pfig" href="/fr/DisheswithOysters,Fruit,andWine,1624OsiasBeert.html">Dishes with Oysters, Fruit, and Wine, 1624, Osias Beert</a></figcaption>
+                    </figure>
+                </div>
+            </div>
+        </div>
+    </div>
     <footer>
         <div class="logo__texte_ms">
             <img class="logo_ms" src="../public/img/baroque-expo.webp" alt="Logo du site">
