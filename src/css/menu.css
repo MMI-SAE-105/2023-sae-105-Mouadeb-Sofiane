@@ -53,15 +53,15 @@ hr{
 }
 .icon_cross_menu{
     width: 40%;
-    margin-left: 59%;
     border: none;
     background-color: #767676;
-    margin-bottom: -25%;
+    position: absolute;
+    top: 14px;
+    right: 10px;
 }
 
 .liste_li{
     line-height: 3;
-    margin-top: -130%;
     list-style-type: none;
 }
 .liste_liii{
