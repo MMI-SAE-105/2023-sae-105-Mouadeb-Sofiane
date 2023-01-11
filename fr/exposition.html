@@ -41,11 +41,11 @@
     <div class="accordeon">                  
         <section x-data="{open:false}">
             <button @click="open = !open" class="btnbilletrie">Billeterie</button>                      
-                <p x-show="open">                      
+                <h2 x-show="open" x-transition.duration.700ms>                      
                     <a href="billeterie.html" class="text_accordeon">                        
                         <p>La billeterie n'est pas encore disponible. Pour tout renseignement en plus veuillez nous <a href="/fr/contact.html" class="text_accordeon1">contacter.</a></p>                    
                     </a>     
-                </p>
+                </h2>
         </section>
     </div>
 
