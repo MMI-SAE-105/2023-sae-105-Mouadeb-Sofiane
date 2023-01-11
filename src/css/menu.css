@@ -61,8 +61,10 @@ hr{
 .liste_li{
     line-height: 3;
     margin-top: -130%;
+    list-style-type: none;
 }
 .liste_liii{
     display: inline;
     margin-bottom: 50%;
+    list-style-type: none;
 }
